@@ -4,7 +4,7 @@ import adapter from '@sveltejs/adapter-static';
 const config = {
 	kit: {
 		adapter: adapter({ fallback: '404.html' }),
-		paths: { base: '/krakow' },
+		paths: { base: process.env.GITHUB_ACTIONS ? '/krakow' : '' },
 		prerender: { entries: ['/', '/en', '/no', '/pl'] }
 	}
 };
