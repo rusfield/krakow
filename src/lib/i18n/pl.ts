@@ -45,18 +45,108 @@ const pl: Dictionary = {
 	gallery: {
 		title: 'Wnętrze apartamentu'
 	},
-	rules: {
-		title: 'Zasady domu',
-		subtitle: 'Aby zapewnić komfortowy pobyt wszystkim gościom, prosimy o zapoznanie się z zasadami.',
-		items: [
-			{ allowed: true, text: 'Zameldowanie: 15:00 – 22:00' },
-			{ allowed: true, text: 'Wymeldowanie: do 11:00' },
-			{ allowed: true, text: 'Odpowiednie dla rodzin z dziećmi' },
-			{ allowed: true, text: 'Dłuższe pobyty mile widziane' },
-			{ allowed: false, text: 'Zakaz palenia w całym obiekcie' },
-			{ allowed: false, text: 'Zakaz imprez i wydarzeń' },
-			{ allowed: false, text: 'Zwierzęta niedozwolone' },
-			{ allowed: false, text: 'Cisza nocna: 22:00 – 08:00' }
+	guestInfo: {
+		pageTitle: 'Informacje dla gości',
+		intro: 'Pobyt w apartamencie jest równoznaczny z akceptacją poniższych zasad.',
+		sections: [
+			{
+				title: 'Zameldowanie / Wymeldowanie',
+				icon: '🏠',
+				items: [
+					'Zameldowanie jest możliwe od godz. 15:00. Wcześniejsze zameldowanie musi być uzgodnione z gospodarzem z wyprzedzeniem.',
+					'Wymeldowanie następuje do godz. 11:00. Późniejsze wymeldowanie jest możliwe wyłącznie po wcześniejszym uzgodnieniu z gospodarzem. Niezwolnienie apartamentu w wyznaczonym czasie może skutkować dodatkową opłatą.',
+					'Przywiązujemy dużą wagę do jakości naszych usług, dlatego prosimy o poszanowanie powierzonego mienia, użytkowanie wszelkiego wyposażenia zgodnie z jego przeznaczeniem oraz pozostawienie apartamentu w podstawowym porządku, tj. wyrzucenie śmieci, umycie brudnych naczyń, zamknięcie okien i zgaszenie świateł.',
+					'Po opuszczeniu i zamknięciu apartamentu prosimy o pozostawienie kluczy w skrzynce przy drzwiach wejściowych, resetując kod do 0000, lub o ich zwrot w uprzednio uzgodniony sposób.',
+					'W przypadku zgubienia kluczy lub pilota do garażu zostanie naliczona dodatkowa opłata.'
+				]
+			},
+			{
+				title: 'Dostęp do apartamentu',
+				icon: '🔑',
+				items: [
+					'Klucze do apartamentu i pilot do garażu – jeśli zarezerwowano miejsce parkingowe – zostaną przekazane zgodnie z informacjami przesłanymi przed przyjazdem (wręczone osobiście przez gospodarza lub odebrane ze skrzynki przy drzwiach wejściowych).',
+					'Kod do domofonu i bramy wejściowej: 1712',
+					'Udostępnianie kodów dostępu lub kluczy osobom trzecim jest surowo zabronione.',
+					'Apartament musi być zawsze zamknięty na klucz po opuszczeniu. Prosimy o wyłączenie świateł, zamknięcie okien i upewnienie się, że żadne urządzenia domowe nie są pozostawione w trybie pracy, szczególnie pralka, zmywarka lub klimatyzacja.',
+					'Można również korzystać z terenów zielonych wokół budynku, w tym z infrastruktury rekreacyjnej.'
+				]
+			},
+			{
+				title: 'Wi-Fi',
+				icon: '📶',
+				items: ['Apartament posiada Wi-Fi. Dane logowania znajdują się wewnątrz.']
+			},
+			{
+				title: 'Cisza nocna i zasady budynku',
+				icon: '🔇',
+				items: [
+					'Cisza nocna w budynku obowiązuje od godz. 22:00 do godz. 06:00.',
+					'Organizowanie imprez, zapraszanie niezarejestrowanych gości oraz wszelkie działania mogące zakłócić spokój sąsiadów są surowo zabronione.',
+					'Ze względów bezpieczeństwa zabrania się pozostawiania sprzętu i rzeczy osobistych (w tym butów, rowerów, hulajnóg itp.) w częściach wspólnych, z wyjątkiem wyznaczonych miejsc.'
+				]
+			},
+			{
+				title: 'Parking',
+				icon: '🚗',
+				items: [
+					'Miejsca parkingowe bezpośrednio przed bramą wejściową i przed budynkiem nie są przypisane do konkretnych apartamentów i mogą być użytkowane w miarę dostępności, zgodnie z przepisami ruchu drogowego. Zabrania się blokowania wiaty śmietnikowej.',
+					'Miejsce parkingowe nr 14 jest przypisane do apartamentu. Jest ono dostępne po uprzedniej rezerwacji i za dodatkową opłatą. Parkowanie na innych miejscach w garażu podziemnym jest surowo zabronione.',
+					'Pilot do garażu musi zostać zwrócony przy wymeldowaniu wraz z kluczami do apartamentu.',
+					'Właściciel nie ponosi odpowiedzialności za uszkodzenia pojazdów.'
+				]
+			},
+			{
+				title: 'Liczba gości',
+				icon: '👥',
+				items: [
+					'Apartament przeznaczony jest dla dwóch osób. W apartamencie może przebywać wyłącznie liczba gości określona w rezerwacji.'
+				]
+			},
+			{
+				title: 'Zakaz palenia',
+				icon: '🚭',
+				items: [
+					'Palenie tradycyjnych lub elektronicznych papierosów, tytoniu lub jakichkolwiek innych substancji odurzających jest surowo zabronione w apartamencie i na balkonie.',
+					'Apartament wyposażony jest w czujnik dymu.'
+				]
+			},
+			{
+				title: 'Zwierzęta',
+				icon: '🐾',
+				items: ['Uwielbiamy zwierzęta, jednak niestety nie są one dozwolone w apartamencie.']
+			},
+			{
+				title: 'Segregacja odpadów',
+				icon: '♻️',
+				items: [
+					'W apartamencie obowiązuje system segregacji odpadów. Kuchnia wyposażona jest w opisane pojemniki na odpady segregowane oraz oddzielny pojemnik na zużyte kapsułki do kawy.',
+					'Odpady należy segregować zgodnie z załączonymi wytycznymi.',
+					'Wiata śmietnikowa oraz pojemnik na szkło znajdują się bezpośrednio przed budynkiem. Prosimy o regularne wyrzucanie śmieci.'
+				]
+			},
+			{
+				title: 'Awarie i usterki',
+				icon: '⚠️',
+				items: [
+					'W przypadku jakiejkolwiek awarii, usterki lub uszkodzenia prosimy o natychmiastowe poinformowanie gospodarza.',
+					'Goście ponoszą finansową odpowiedzialność za wszelkie szkody wyrządzone podczas pobytu.'
+				]
+			},
+			{
+				title: 'Bezpieczeństwo',
+				icon: '🧯',
+				items: [
+					'Apartament wyposażony jest w czujnik dymu, gaśnicę, koc gaśniczy oraz apteczkę pierwszej pomocy, znajdujące się w oznaczonych miejscach.',
+					'W przypadku nagłego zagrożenia prosimy o natychmiastowy kontakt z odpowiednimi służbami ratunkowymi. Lista numerów alarmowych jest załączona.'
+				]
+			},
+			{
+				title: 'Miłość',
+				icon: '❤️',
+				items: [
+					'Kraków to piękne miasto i uprawianie tu miłości jest jak najbardziej w porządku. Prosimy jednak zabrać ze sobą prezerwatywy przy wyjeździe.'
+				]
+			}
 		]
 	}
 };

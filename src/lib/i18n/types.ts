@@ -21,12 +21,13 @@ export interface Dictionary {
 	gallery: {
 		title: string;
 	};
-	rules: {
-		title: string;
-		subtitle: string;
-		items: Array<{
-			allowed: boolean;
-			text: string;
+	guestInfo: {
+		pageTitle: string;
+		intro: string;
+		sections: Array<{
+			title: string;
+			icon: string;
+			items: string[];
 		}>;
 	};
 }

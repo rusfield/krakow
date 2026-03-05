@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 	import type { LayoutData } from './$types';
+	import Gb from 'svelte-flag-icons/Gb.svelte';
+	import No from 'svelte-flag-icons/No.svelte';
+	import Pl from 'svelte-flag-icons/Pl.svelte';
 
 	let { data, children }: { data: LayoutData; children: import('svelte').Snippet } = $props();
 
@@ -12,17 +16,22 @@
 	const BOOKING_URL = 'https://www.booking.com';
 
 	const langs = ['en', 'no', 'pl'] as const;
-	const langMeta: Record<string, { label: string; flag: string; name: string }> = {
-		en: { label: 'EN', flag: '🇬🇧', name: 'English' },
-		no: { label: 'NO', flag: '🇳🇴', name: 'Norsk' },
-		pl: { label: 'PL', flag: '🇵🇱', name: 'Polski' }
+	const langMeta: Record<string, { label: string; flag: import('svelte').Component; name: string }> = {
+		en: { label: 'EN', flag: Gb, name: 'English' },
+		no: { label: 'NO', flag: No, name: 'Norsk' },
+		pl: { label: 'PL', flag: Pl, name: 'Polski' }
 	};
 
 	const navLinks = $derived([
 		{ href: resolve(`/${data.lang}`), label: 'Home' },
-		{ href: '#', label: 'Krakow Guide' },
-		{ href: '#', label: 'Guest Info' }
+		{ href: resolve(`/${data.lang}/guide`), label: 'Krakow Guide' },
+		{ href: resolve(`/${data.lang}/guest-info`), label: 'Guest Info' }
 	]);
+
+	// Sub-path after /{lang} — e.g. "guest-info" or "" for home
+	const subPath = $derived(page.url.pathname.split('/').slice(2).join('/'));
+
+	const CurrentFlag = $derived(langMeta[data.lang].flag);
 
 	let mobileMenuOpen = $state(false);
 	let langDropdownOpen = $state(false);
@@ -76,7 +85,7 @@
 					class="flex w-[4.5rem] items-center justify-between gap-1.5 rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-700 transition hover:bg-gray-50 sm:text-sm"
 				>
 					<span class="flex items-center gap-1.5">
-						<span class="text-base leading-none">{langMeta[data.lang].flag}</span>
+						<CurrentFlag class="h-4 w-5 rounded-sm object-cover" />
 						<span>{langMeta[data.lang].label}</span>
 					</span>
 					<svg
@@ -96,9 +105,10 @@
 						class="absolute right-0 top-full z-50 mt-1.5 min-w-[8rem] overflow-hidden rounded-lg border border-gray-200 bg-white py-1 shadow-lg"
 					>
 						{#each langs as l}
+							{@const Flag = langMeta[l].flag}
 							<li role="option" aria-selected={l === data.lang}>
 								<a
-									href={resolve(`/${l}`)}
+									href={resolve(`/${l}${subPath ? '/' + subPath : ''}`)}
 									data-sveltekit-noscroll
 									onclick={() => (langDropdownOpen = false)}
 									class="flex items-center gap-2.5 px-3 py-2 text-sm transition
@@ -106,7 +116,7 @@
 										? 'bg-gray-50 font-semibold text-gray-900'
 										: 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}"
 								>
-									<span class="text-base leading-none">{langMeta[l].flag}</span>
+									<Flag class="h-4 w-5 rounded-sm object-cover" />
 									<span>{langMeta[l].name}</span>
 									{#if l === data.lang}
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="ml-auto size-3.5 text-blue-600">
