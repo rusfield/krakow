@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
-	import { resolve } from '$app/paths';
+	import { resolve, base } from '$app/paths';
 	import { page } from '$app/state';
 	import type { LayoutData } from './$types';
 	import Gb from 'svelte-flag-icons/Gb.svelte';
@@ -29,7 +29,7 @@
 	]);
 
 	// Sub-path after /{lang} — e.g. "guest-info" or "" for home
-	const subPath = $derived(page.url.pathname.split('/').slice(2).join('/'));
+	const subPath = $derived(page.url.pathname.slice(base.length).split('/').slice(2).join('/'));
 
 	const CurrentFlag = $derived(langMeta[data.lang].flag);
 
