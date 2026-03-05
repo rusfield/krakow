@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 
 	if (browser) {
-		goto('/en', { replaceState: true });
+		goto(resolve('/en'), { replaceState: true });
 	}
 </script>
 
 <svelte:head>
-	<meta http-equiv="refresh" content="0; url=/en" />
+	<meta http-equiv="refresh" content="0; url={resolve('/en')}" />
 </svelte:head>

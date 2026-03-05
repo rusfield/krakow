@@ -4,8 +4,10 @@
 	let { data }: { data: PageData } = $props();
 	const t = $derived(data.t);
 
+	import { asset } from '$app/paths';
+
 	const BOOKING_URL = 'https://www.booking.com';
-	
+
 	// Icons are presentation-only; titles/descriptions come from the dictionary
 	const featureIcons = [
 		// Central Location
@@ -36,19 +38,19 @@
 	];
 
 	const photos = [
-		{ src: '/images/1.jpg', alt: 'Bright living room with modern furnishings and large windows' },
-		{ src: '/images/4.jpg', alt: 'Spacious bedroom with a double bed and natural light' },
-		{ src: '/images/5.jpg', alt: 'Contemporary kitchen fully equipped with appliances and utensils' },
-		{ src: '/images/7.jpg', alt: 'Stylish bathroom with walk-in shower and clean fittings' },
-		{ src: '/images/19.jpg', alt: 'Open dining area with a table for four and city views' },
-		{ src: '/images/33.jpg', alt: 'Additional view of the apartment interior' }
+		{ src: asset('/images/1.jpg'), alt: 'Bright living room with modern furnishings and large windows' },
+		{ src: asset('/images/4.jpg'), alt: 'Spacious bedroom with a double bed and natural light' },
+		{ src: asset('/images/5.jpg'), alt: 'Contemporary kitchen fully equipped with appliances and utensils' },
+		{ src: asset('/images/7.jpg'), alt: 'Stylish bathroom with walk-in shower and clean fittings' },
+		{ src: asset('/images/19.jpg'), alt: 'Open dining area with a table for four and city views' },
+		{ src: asset('/images/33.jpg'), alt: 'Additional view of the apartment interior' }
 	];
 </script>
 
 <!-- Hero -->
 <section
 	class="relative flex min-h-[90vh] items-center justify-center bg-gray-800 bg-cover bg-center text-white"
-	style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('/images/27.jpg');"
+	style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('{asset('/images/27.jpg')}')"
 >
 	<div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
 		<p class="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-300 sm:text-base">

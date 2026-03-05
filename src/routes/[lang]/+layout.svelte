@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
+	import { resolve } from '$app/paths';
 	import type { LayoutData } from './$types';
 
 	let { data, children }: { data: LayoutData; children: import('svelte').Snippet } = $props();
@@ -18,7 +19,7 @@
 	};
 
 	const navLinks = $derived([
-		{ href: `/${data.lang}`, label: 'Home' },
+		{ href: resolve(`/${data.lang}`), label: 'Home' },
 		{ href: '#', label: 'Krakow Guide' },
 		{ href: '#', label: 'Guest Info' }
 	]);
@@ -42,7 +43,7 @@
 <header class="sticky top-0 z-50 bg-white shadow-sm">
 	<div class="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
 		<!-- Left: Logo / Title -->
-		<a href="/{data.lang}" class="shrink-0 no-underline">
+		<a href={resolve(`/${data.lang}`)} class="shrink-0 no-underline">
 			<span class="text-lg font-bold tracking-tight text-gray-900 sm:text-xl">
 				{data.t.nav.title}
 			</span>
@@ -97,7 +98,7 @@
 						{#each langs as l}
 							<li role="option" aria-selected={l === data.lang}>
 								<a
-									href="/{l}"
+									href={resolve(`/${l}`)}
 									data-sveltekit-noscroll
 									onclick={() => (langDropdownOpen = false)}
 									class="flex items-center gap-2.5 px-3 py-2 text-sm transition
