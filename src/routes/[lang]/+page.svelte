@@ -5,25 +5,10 @@
 	const t = $derived(data.t);
 
 	import { asset } from '$app/paths';
+	import { getAirbnbUrl, getBookingUrl } from '$lib/external-links';
 
-	const BASE_BOOKING_URL =
-		'https://www.booking.com/hotel/pl/royal-blue-apartment-tauron-arena-cracow.no.html?aid=356980&label=gog235jc-10CAsotgFCKHJveWFsLWJsdWUtYXBhcnRtZW50LXRhdXJvbi1hcmVuYS1jcmFjb3dICVgDaLYBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAK4wNTOBsACAdICJGQ4OTE0OGYzLTVhMTQtNGRjNS1iMGU1LTAzOGFiMWU4NWZmM9gCAeACAQ&sid=b4ca43cfec7be560ba947fe0da43e943&dist=0&keep_landing=1&sb_price_type=total&type=total&activeTab=photosGallery';
-
-	const BOOKING_URL = (() => {
-		const today = new Date();
-		const fmt = (d: Date) => d.toISOString().slice(0, 10);
-		const checkin = fmt(today);
-		const checkout = fmt(new Date(today.getTime() + 2 * 86400000));
-		return `${BASE_BOOKING_URL}&checkin=${checkin}&checkout=${checkout}`;
-	})();
-
-	const AIRBNB_URL = (() => {
-		const today = new Date();
-		const fmt = (d: Date) => d.toISOString().slice(0, 10);
-		const checkin = fmt(today);
-		const checkout = fmt(new Date(today.getTime() + 2 * 86400000));
-		return `https://www.airbnb.pl/rooms/1649459036475846895?check_in=${checkin}&check_out=${checkout}`;
-	})();
+	const BOOKING_URL = $derived(getBookingUrl(data.lang));
+	const AIRBNB_URL = $derived(getAirbnbUrl(data.lang));
 
 	// Icons are presentation-only; titles/descriptions come from the dictionary
 	const featureIcons = [
