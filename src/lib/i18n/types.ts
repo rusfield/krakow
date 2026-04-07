@@ -54,9 +54,19 @@ export interface Dictionary {
 	};
 	contact: {
 		pageTitle: string;
+		intro: string;
+		availability: string;
+		shortcutsTitle: string;
+		tapToOpen: string;
 		phone: string;
 		email: string;
 		address: string;
+		apps: {
+			whatsapp: string;
+			googleMaps: string;
+			appleMaps: string;
+			email: string;
+		};
 	};
 	facilities: {
 		pageTitle: string;

@@ -163,9 +163,20 @@ const pl: Dictionary = {
 	},
 	contact: {
 		pageTitle: 'Kontakt',
+		intro:
+			'Skontaktuj się przez aplikację, z której już korzystasz. Otwórz czat, zadzwoń albo przejdź od razu do apartamentu w wybranej aplikacji map.',
+		availability: 'Najszybsza odpowiedź na WhatsAppie',
+		shortcutsTitle: 'Skróty do aplikacji',
+		tapToOpen: 'Kliknij kartę, aby otworzyć skrót do aplikacji.',
 		phone: 'WhatsApp / Telefon',
 		email: 'E-mail',
-		address: 'Adres'
+		address: 'Adres',
+		apps: {
+			whatsapp: 'WhatsApp',
+			googleMaps: 'Google Maps',
+			appleMaps: 'Apple Maps',
+			email: 'E-mail'
+		}
 	},
 	facilities: {
 		pageTitle: 'Wyposażenie',

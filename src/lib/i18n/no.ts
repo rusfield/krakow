@@ -162,9 +162,20 @@ const no: Dictionary = {
 	},
 	contact: {
 		pageTitle: 'Kontakt',
+		intro:
+			'Ta kontakt i appen du allerede bruker. Start en chat, ring direkte, eller åpne leiligheten i kartappen du foretrekker.',
+		availability: 'Raskest svar på WhatsApp',
+		shortcutsTitle: 'Snarveier til apper',
+		tapToOpen: 'Trykk på et kort for å åpne appen.',
 		phone: 'WhatsApp / Telefon',
 		email: 'E-post',
-		address: 'Adresse'
+		address: 'Adresse',
+		apps: {
+			whatsapp: 'WhatsApp',
+			googleMaps: 'Google Maps',
+			appleMaps: 'Apple Maps',
+			email: 'E-post'
+		}
 	},
 	facilities: {
 		pageTitle: 'Fasiliteter',

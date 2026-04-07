@@ -162,9 +162,20 @@ const en: Dictionary = {
 	},
 	contact: {
 		pageTitle: 'Contact',
+		intro:
+			'Reach the host in the app you already use. Open chat, start a call, or jump straight to the apartment in your preferred maps app.',
+		availability: 'Fastest response on WhatsApp',
+		shortcutsTitle: 'Quick app shortcuts',
+		tapToOpen: 'Tap any card to open the app shortcut.',
 		phone: 'WhatsApp / Phone',
 		email: 'Email',
-		address: 'Address'
+		address: 'Address',
+		apps: {
+			whatsapp: 'WhatsApp',
+			googleMaps: 'Google Maps',
+			appleMaps: 'Apple Maps',
+			email: 'Email'
+		}
 	},
 	facilities: {
 		pageTitle: 'Facilities',
