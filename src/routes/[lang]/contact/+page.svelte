@@ -99,6 +99,7 @@
 							<Icon icon="mdi:google-maps" class="size-4" />
 							{t.contact.apps.googleMaps}
 						</a>
+						<!--
 						<a
 							href={APPLE_MAPS_URL}
 							target="_blank"
@@ -108,6 +109,7 @@
 							<Icon icon="simple-icons:apple" class="size-4" />
 							{t.contact.apps.appleMaps}
 						</a>
+						-->
 					</div>
 				</div>
 			</div>

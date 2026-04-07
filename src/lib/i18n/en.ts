@@ -96,7 +96,7 @@ const en: Dictionary = {
 				icon: '🚗',
 				items: [
 					'Parking spaces directly in front of the entrance gate and in front of the building are not assigned to specific apartments and may be used subject to availability and in accordance with traffic regulations. Blocking the garbage shelter is prohibited.',
-					'Parking space No. 14 is assigned to the apartment. It is available upon prior reservation and for an additional fee. Parking in any other spaces in the underground garage is strictly prohibited.',
+					'A parking space in the underground garage is assigned to the apartment. It is available upon prior reservation and for an additional fee. Parking in any other spaces in the underground garage is strictly prohibited.',
 					'The garage remote control must be returned upon departure together with the apartment keys.',
 					'The owner is not responsible for any damage to vehicles.'
 				]

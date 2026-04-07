@@ -97,7 +97,7 @@ const pl: Dictionary = {
 				icon: '🚗',
 				items: [
 					'Miejsca parkingowe bezpośrednio przed bramą wejściową i przed budynkiem nie są przypisane do konkretnych apartamentów i mogą być użytkowane w miarę dostępności, zgodnie z przepisami ruchu drogowego. Zabrania się blokowania wiaty śmietnikowej.',
-					'Miejsce parkingowe nr 14 jest przypisane do apartamentu. Jest ono dostępne po uprzedniej rezerwacji i za dodatkową opłatą. Parkowanie na innych miejscach w garażu podziemnym jest surowo zabronione.',
+					'Do apartamentu przypisane jest miejsce parkingowe w garażu podziemnym. Jest ono dostępne po uprzedniej rezerwacji i za dodatkową opłatą. Parkowanie na innych miejscach w garażu podziemnym jest surowo zabronione.',
 					'Pilot do garażu musi zostać zwrócony przy wymeldowaniu wraz z kluczami do apartamentu.',
 					'Właściciel nie ponosi odpowiedzialności za uszkodzenia pojazdów.'
 				]
