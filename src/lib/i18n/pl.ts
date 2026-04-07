@@ -3,13 +3,22 @@ import type { Dictionary } from './types';
 const pl: Dictionary = {
 	nav: {
 		title: 'Royal Blue Apartment Tauron Arena Cracow',
-		book: 'Zarezerwuj na Booking.com'
+		book: 'Booking.com',
+		airbnb: 'Airbnb',
+		links: {
+			about: 'O nas',
+			facilities: 'Wyposażenie',
+			guestInfo: 'Zasady pobytu',
+			gallery: 'Galeria',
+			contact: 'Kontakt'
+		}
 	},
 	hero: {
 		location: 'Kraków, Polska',
 		headline: 'Royal Blue Apartment\nTauron Arena Cracow',
 		sub: 'Jasny, nowoczesny apartament kilka kroków od Starego Miasta – idealna baza do odkrywania jednego z najpiękniejszych miast Europy.',
-		book: 'Zarezerwuj na Booking.com'
+		book: 'Zarezerwuj na Booking.com',
+		airbnb: 'Zarezerwuj na Airbnb'
 	},
 	welcome: {
 		title: 'Witamy w apartamencie',
@@ -23,7 +32,8 @@ const pl: Dictionary = {
 		},
 		{
 			title: 'Szybkie Wi-Fi',
-			description: 'Bądź zawsze online dzięki niezawodnemu łączu światłowodowemu w całym apartamencie.'
+			description:
+				'Bądź zawsze online dzięki niezawodnemu łączu światłowodowemu w całym apartamencie.'
 		},
 		{
 			title: 'W pełni wyposażona kuchnia',
@@ -42,9 +52,6 @@ const pl: Dictionary = {
 			description: 'Ciesz się chłodem latem i ciepłem zimą dzięki klimatyzacji w każdym pokoju.'
 		}
 	],
-	gallery: {
-		title: 'Wnętrze apartamentu'
-	},
 	guestInfo: {
 		pageTitle: 'Zasady pobytu',
 		intro: 'Pobyt w apartamencie jest równoznaczny z akceptacją poniższych zasad.',
@@ -139,7 +146,7 @@ const pl: Dictionary = {
 					'Apartament wyposażony jest w czujnik dymu, gaśnicę, koc gaśniczy oraz apteczkę pierwszej pomocy, znajdujące się w oznaczonych miejscach.',
 					'W przypadku nagłego zagrożenia prosimy o natychmiastowy kontakt z odpowiednimi służbami ratunkowymi. Lista numerów alarmowych jest załączona.'
 				]
-			},
+			}
 		]
 	},
 	galleryPage: {
@@ -166,17 +173,36 @@ const pl: Dictionary = {
 			{
 				title: 'Sypialnia',
 				icon: '🛏️',
-				items: ['Łóżko king-size', 'Szafa z wieszakami', 'Zasłony zaciemniające', 'Dodatkowe poduszki i koce']
+				items: [
+					'Łóżko king-size',
+					'Szafa z wieszakami',
+					'Zasłony zaciemniające',
+					'Dodatkowe poduszki i koce'
+				]
 			},
 			{
 				title: 'Łazienka',
 				icon: '🚿',
-				items: ['Wanna i prysznic', 'Ogrzewana podłoga', 'Suszarka do włosów', 'Darmowe kosmetyki', 'Pralka', 'Ręczniki, szlafroki i kapcie']
+				items: [
+					'Wanna i prysznic',
+					'Ogrzewana podłoga',
+					'Suszarka do włosów',
+					'Darmowe kosmetyki',
+					'Pralka',
+					'Ręczniki, szlafroki i kapcie'
+				]
 			},
 			{
 				title: 'Kuchnia',
 				icon: '🍳',
-				items: ['Płyta indukcyjna', 'Piekarnik i mikrofalówka', 'Lodówka z zamrażarką', 'Zmywarka', 'Ekspres do kawy', 'Pełen zestaw naczyń i sztućców']
+				items: [
+					'Płyta indukcyjna',
+					'Piekarnik i mikrofalówka',
+					'Lodówka z zamrażarką',
+					'Zmywarka',
+					'Ekspres do kawy',
+					'Pełen zestaw naczyń i sztućców'
+				]
 			},
 			{
 				title: 'Salon',
@@ -186,7 +212,12 @@ const pl: Dictionary = {
 			{
 				title: 'Budynek i parking',
 				icon: '🏢',
-				items: ['Prywatne miejsce parkingowe w garażu podziemnym', 'Bezpieczne wejście z domofonem', 'Winda', 'Ogród i teren zewnętrzny']
+				items: [
+					'Prywatne miejsce parkingowe w garażu podziemnym',
+					'Bezpieczne wejście z domofonem',
+					'Winda',
+					'Ogród i teren zewnętrzny'
+				]
 			}
 		]
 	},

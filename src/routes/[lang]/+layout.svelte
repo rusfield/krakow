@@ -10,10 +10,19 @@
 	let { data, children }: { data: LayoutData; children: import('svelte').Snippet } = $props();
 
 	// Pass reactive getter objects so context consumers stay in sync when data updates on navigation
-	setContext('t', { get current() { return data.t; } });
-	setContext('lang', { get current() { return data.lang; } });
+	setContext('t', {
+		get current() {
+			return data.t;
+		}
+	});
+	setContext('lang', {
+		get current() {
+			return data.lang;
+		}
+	});
 
-	const BASE_BOOKING_URL = 'https://www.booking.com/hotel/pl/royal-blue-apartment-tauron-arena-cracow.no.html?aid=356980&label=gog235jc-10CAsotgFCKHJveWFsLWJsdWUtYXBhcnRtZW50LXRhdXJvbi1hcmVuYS1jcmFjb3dICVgDaLYBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAK4wNTOBsACAdICJGQ4OTE0OGYzLTVhMTQtNGRjNS1iMGU1LTAzOGFiMWU4NWZmM9gCAeACAQ&sid=b4ca43cfec7be560ba947fe0da43e943&dist=0&keep_landing=1&sb_price_type=total&type=total&activeTab=photosGallery';
+	const BASE_BOOKING_URL =
+		'https://www.booking.com/hotel/pl/royal-blue-apartment-tauron-arena-cracow.no.html?aid=356980&label=gog235jc-10CAsotgFCKHJveWFsLWJsdWUtYXBhcnRtZW50LXRhdXJvbi1hcmVuYS1jcmFjb3dICVgDaLYBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAK4wNTOBsACAdICJGQ4OTE0OGYzLTVhMTQtNGRjNS1iMGU1LTAzOGFiMWU4NWZmM9gCAeACAQ&sid=b4ca43cfec7be560ba947fe0da43e943&dist=0&keep_landing=1&sb_price_type=total&type=total&activeTab=photosGallery';
 
 	const BOOKING_URL = (() => {
 		const today = new Date();
@@ -32,18 +41,21 @@
 	})();
 
 	const langs = ['en', 'no', 'pl'] as const;
-	const langMeta: Record<string, { label: string; flag: import('svelte').Component; name: string }> = {
+	const langMeta: Record<
+		string,
+		{ label: string; flag: import('svelte').Component; name: string }
+	> = {
 		en: { label: 'EN', flag: Gb, name: 'English' },
 		no: { label: 'NO', flag: No, name: 'Norsk' },
 		pl: { label: 'PL', flag: Pl, name: 'Polski' }
 	};
 
 	const navLinks = $derived([
-		{ href: resolve(`/${data.lang}/about`), label: 'About Us' },
-		{ href: resolve(`/${data.lang}/gallery`), label: 'Gallery' },
-		{ href: resolve(`/${data.lang}/facilities`), label: 'Facilities' },
-		{ href: resolve(`/${data.lang}/contact`), label: 'Contact' },
-		{ href: resolve(`/${data.lang}/guest-info`), label: 'House Rules' }
+		{ href: resolve(`/${data.lang}/about`), label: data.t.nav.links.about },
+		{ href: resolve(`/${data.lang}/facilities`), label: data.t.nav.links.facilities },
+		{ href: resolve(`/${data.lang}/guest-info`), label: data.t.nav.links.guestInfo },
+		{ href: resolve(`/${data.lang}/gallery`), label: data.t.nav.links.gallery },
+		{ href: resolve(`/${data.lang}/contact`), label: data.t.nav.links.contact }
 	]);
 
 	// Sub-path after /{lang} — e.g. "guest-info" or "" for home
@@ -68,10 +80,14 @@
 </script>
 
 <header class="sticky top-0 z-50 bg-white shadow-sm">
-	<div class="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
+	<div
+		class="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8"
+	>
 		<!-- Left: Logo / Title -->
 		<a href={resolve(`/${data.lang}`)} class="shrink-0 no-underline">
-			<span class="flex flex-col text-sm font-bold leading-tight tracking-tight text-gray-900 sm:text-base">
+			<span
+				class="flex flex-col text-sm leading-tight font-bold tracking-tight text-gray-900 sm:text-base"
+			>
 				<span>Royal Blue Apartment</span>
 				<span>Tauron Arena Cracow</span>
 			</span>
@@ -113,7 +129,11 @@
 						fill="currentColor"
 						class="size-3 text-gray-400 transition-transform {langDropdownOpen ? 'rotate-180' : ''}"
 					>
-						<path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+						<path
+							fill-rule="evenodd"
+							d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+							clip-rule="evenodd"
+						/>
 					</svg>
 				</button>
 
@@ -121,7 +141,7 @@
 					<ul
 						role="listbox"
 						aria-label="Select language"
-						class="absolute right-0 top-full z-50 mt-1.5 min-w-[8rem] overflow-hidden rounded-lg border border-gray-200 bg-white py-1 shadow-lg"
+						class="absolute top-full right-0 z-50 mt-1.5 min-w-[8rem] overflow-hidden rounded-lg border border-gray-200 bg-white py-1 shadow-lg"
 					>
 						{#each langs as l}
 							{@const Flag = langMeta[l].flag}
@@ -138,8 +158,17 @@
 									<Flag class="h-4 w-5 rounded-sm object-cover" />
 									<span>{langMeta[l].name}</span>
 									{#if l === data.lang}
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="ml-auto size-3.5 text-blue-600">
-											<path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd" />
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 16 16"
+											fill="currentColor"
+											class="ml-auto size-3.5 text-blue-600"
+										>
+											<path
+												fill-rule="evenodd"
+												d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+												clip-rule="evenodd"
+											/>
 										</svg>
 									{/if}
 								</a>
@@ -155,7 +184,7 @@
 					href={BOOKING_URL}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="whitespace-nowrap rounded-lg bg-blue-600 px-3 py-2 text-center text-xs font-semibold text-white shadow transition hover:bg-blue-700 active:scale-95 sm:px-4 sm:py-2.5 sm:text-sm"
+					class="rounded-lg bg-blue-600 px-3 py-2 text-center text-xs font-semibold whitespace-nowrap text-white shadow transition hover:bg-blue-700 active:scale-95 sm:px-4 sm:py-2.5 sm:text-sm"
 				>
 					{data.t.nav.book}
 				</a>
@@ -163,9 +192,9 @@
 					href={AIRBNB_URL}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="whitespace-nowrap rounded-lg bg-[#FF385C] px-3 py-2 text-center text-xs font-semibold text-white shadow transition hover:bg-[#E31C5F] active:scale-95 sm:px-4 sm:py-2.5 sm:text-sm"
+					class="rounded-lg bg-[#FF385C] px-3 py-2 text-center text-xs font-semibold whitespace-nowrap text-white shadow transition hover:bg-[#E31C5F] active:scale-95 sm:px-4 sm:py-2.5 sm:text-sm"
 				>
-					Airbnb
+					{data.t.nav.airbnb}
 				</a>
 			</div>
 
@@ -180,13 +209,29 @@
 			>
 				{#if mobileMenuOpen}
 					<!-- X icon -->
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-						<path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						class="size-5"
+					>
+						<path
+							d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+						/>
 					</svg>
 				{:else}
 					<!-- Hamburger icon -->
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-						<path fill-rule="evenodd" d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						class="size-5"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"
+							clip-rule="evenodd"
+						/>
 					</svg>
 				{/if}
 			</button>
@@ -197,7 +242,7 @@
 	{#if mobileMenuOpen}
 		<nav
 			id="mobile-menu"
-			class="border-t border-gray-100 bg-white px-4 pb-3 pt-2 md:hidden"
+			class="border-t border-gray-100 bg-white px-4 pt-2 pb-3 md:hidden"
 			aria-label="Mobile navigation"
 		>
 			{#each navLinks as link}
@@ -219,28 +264,44 @@
 		href={BOOKING_URL}
 		target="_blank"
 		rel="noopener noreferrer"
-		aria-label={data.t.nav.book}
+		aria-label={data.t.hero.book}
 		class="flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-blue-700 active:scale-95"
 	>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4 shrink-0">
-			<path d="M10.75 16.82A7.462 7.462 0 0 1 10 17c-.34 0-.678-.023-1.01-.068a1 1 0 0 1-.004-1.989 5.5 5.5 0 1 0-4.311-5.57 1 1 0 0 1-1.998-.076A7.5 7.5 0 1 1 10.75 16.82Z" />
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 20 20"
+			fill="currentColor"
+			class="size-4 shrink-0"
+		>
+			<path
+				d="M10.75 16.82A7.462 7.462 0 0 1 10 17c-.34 0-.678-.023-1.01-.068a1 1 0 0 1-.004-1.989 5.5 5.5 0 1 0-4.311-5.57 1 1 0 0 1-1.998-.076A7.5 7.5 0 1 1 10.75 16.82Z"
+			/>
 			<path d="M10 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" />
-			<path d="M14.25 4.75a.75.75 0 0 0-1.5 0v1.5h-1.5a.75.75 0 0 0 0 1.5h1.5v1.5a.75.75 0 0 0 1.5 0v-1.5h1.5a.75.75 0 0 0 0-1.5h-1.5v-1.5Z" />
+			<path
+				d="M14.25 4.75a.75.75 0 0 0-1.5 0v1.5h-1.5a.75.75 0 0 0 0 1.5h1.5v1.5a.75.75 0 0 0 1.5 0v-1.5h1.5a.75.75 0 0 0 0-1.5h-1.5v-1.5Z"
+			/>
 		</svg>
-		Booking
+		{data.t.nav.book}
 	</a>
 	<a
 		href={AIRBNB_URL}
 		target="_blank"
 		rel="noopener noreferrer"
-		aria-label="Book on Airbnb"
+		aria-label={data.t.hero.airbnb}
 		class="flex items-center gap-2 rounded-full bg-[#FF385C] px-5 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#E31C5F] active:scale-95"
 	>
 		<!-- Airbnb Bélo icon (simplified) -->
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="size-4 shrink-0">
-			<path d="M16 1C10.925 1 6 6.925 6 13c0 3.313 1.363 6.288 3.5 8.5L16 31l6.5-9.5C24.637 19.288 26 16.313 26 13c0-6.075-4.925-12-10-12zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 32 32"
+			fill="currentColor"
+			class="size-4 shrink-0"
+		>
+			<path
+				d="M16 1C10.925 1 6 6.925 6 13c0 3.313 1.363 6.288 3.5 8.5L16 31l6.5-9.5C24.637 19.288 26 16.313 26 13c0-6.075-4.925-12-10-12zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"
+			/>
 		</svg>
-		Airbnb
+		{data.t.nav.airbnb}
 	</a>
 </div>
 

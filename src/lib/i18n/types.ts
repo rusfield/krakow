@@ -2,12 +2,21 @@ export interface Dictionary {
 	nav: {
 		title: string;
 		book: string;
+		airbnb: string;
+		links: {
+			about: string;
+			facilities: string;
+			guestInfo: string;
+			gallery: string;
+			contact: string;
+		};
 	};
 	hero: {
 		location: string;
 		headline: string;
 		sub: string;
 		book: string;
+		airbnb: string;
 	};
 	welcome: {
 		title: string;
@@ -18,9 +27,6 @@ export interface Dictionary {
 		title: string;
 		description: string;
 	}>;
-	gallery: {
-		title: string;
-	};
 	guestInfo: {
 		pageTitle: string;
 		intro: string;

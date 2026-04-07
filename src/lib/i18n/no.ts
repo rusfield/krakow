@@ -3,13 +3,22 @@ import type { Dictionary } from './types';
 const no: Dictionary = {
 	nav: {
 		title: 'Royal Blue Apartment Tauron Arena Cracow',
-		book: 'Book på Booking.com'
+		book: 'Booking.com',
+		airbnb: 'Airbnb',
+		links: {
+			about: 'Om oss',
+			facilities: 'Fasiliteter',
+			guestInfo: 'Husregler',
+			gallery: 'Galleri',
+			contact: 'Kontakt'
+		}
 	},
 	hero: {
 		location: 'Krakow, Polen',
 		headline: 'Royal Blue Apartment\nTauron Arena Cracow',
 		sub: 'En lys, moderne leilighet noen sekunder fra gamlebyen – det perfekte utgangspunktet for å utforske en av Europas vakreste byer.',
-		book: 'Book på Booking.com'
+		book: 'Book på Booking.com',
+		airbnb: 'Book på Airbnb'
 	},
 	welcome: {
 		title: 'Velkommen til leiligheten',
@@ -42,9 +51,6 @@ const no: Dictionary = {
 			description: 'Hold deg kjølig om sommeren og koselig om vinteren med klimakontroll.'
 		}
 	],
-	gallery: {
-		title: 'Inne i leiligheten'
-	},
 	guestInfo: {
 		pageTitle: 'Husregler',
 		intro: 'Ved å oppholde seg i leiligheten aksepterer man følgende regler.',
@@ -139,7 +145,7 @@ const no: Dictionary = {
 					'Leiligheten er utstyrt med røykvarsler, brannslukker, brannteppe og en førstehjelpskit plassert på merkede steder.',
 					'I tilfelle nødsituasjon, vennligst kontakt de aktuelle nødetatene umiddelbart. En liste over nødnumre er vedlagt.'
 				]
-			},
+			}
 		]
 	},
 	galleryPage: {
@@ -166,27 +172,57 @@ const no: Dictionary = {
 			{
 				title: 'Soverom',
 				icon: '🛏️',
-				items: ['King-size seng', 'Garderobe med kleshengere', 'Mørkleggingsgardiner', 'Ekstra puter og pledd']
+				items: [
+					'King-size seng',
+					'Garderobe med kleshengere',
+					'Mørkleggingsgardiner',
+					'Ekstra puter og pledd'
+				]
 			},
 			{
 				title: 'Bad',
 				icon: '🚿',
-				items: ['Badekar og dusj', 'Gulvvarme', 'Hårtørker', 'Gratis toalettsaker', 'Vaskemaskin', 'Håndklær, badekåper og tøfler']
+				items: [
+					'Badekar og dusj',
+					'Gulvvarme',
+					'Hårtørker',
+					'Gratis toalettsaker',
+					'Vaskemaskin',
+					'Håndklær, badekåper og tøfler'
+				]
 			},
 			{
 				title: 'Kjøkken',
 				icon: '🍳',
-				items: ['Induksjonstopp', 'Stekeovn og mikrobølgeovn', 'Kjøleskap med fryser', 'Oppvaskmaskin', 'Kaffemaskin', 'Fullt sett med kokekar og bestikk']
+				items: [
+					'Induksjonstopp',
+					'Stekeovn og mikrobølgeovn',
+					'Kjøleskap med fryser',
+					'Oppvaskmaskin',
+					'Kaffemaskin',
+					'Fullt sett med kokekar og bestikk'
+				]
 			},
 			{
 				title: 'Stue',
 				icon: '🛋️',
-				items: ['Smart-TV', 'Høyhastighets Wi-Fi', 'Klimaanlegg', 'Balkong med utsikt over parken', 'Skrivebord']
+				items: [
+					'Smart-TV',
+					'Høyhastighets Wi-Fi',
+					'Klimaanlegg',
+					'Balkong med utsikt over parken',
+					'Skrivebord'
+				]
 			},
 			{
 				title: 'Bygning og parkering',
 				icon: '🏢',
-				items: ['Privat parkeringsplass i underjordisk garasje', 'Sikker inngang med interntelefon', 'Heis', 'Hage og uteareal']
+				items: [
+					'Privat parkeringsplass i underjordisk garasje',
+					'Sikker inngang med interntelefon',
+					'Heis',
+					'Hage og uteareal'
+				]
 			}
 		]
 	},

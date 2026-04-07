@@ -6,7 +6,8 @@
 
 	import { asset } from '$app/paths';
 
-	const BASE_BOOKING_URL = 'https://www.booking.com/hotel/pl/royal-blue-apartment-tauron-arena-cracow.no.html?aid=356980&label=gog235jc-10CAsotgFCKHJveWFsLWJsdWUtYXBhcnRtZW50LXRhdXJvbi1hcmVuYS1jcmFjb3dICVgDaLYBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAK4wNTOBsACAdICJGQ4OTE0OGYzLTVhMTQtNGRjNS1iMGU1LTAzOGFiMWU4NWZmM9gCAeACAQ&sid=b4ca43cfec7be560ba947fe0da43e943&dist=0&keep_landing=1&sb_price_type=total&type=total&activeTab=photosGallery';
+	const BASE_BOOKING_URL =
+		'https://www.booking.com/hotel/pl/royal-blue-apartment-tauron-arena-cracow.no.html?aid=356980&label=gog235jc-10CAsotgFCKHJveWFsLWJsdWUtYXBhcnRtZW50LXRhdXJvbi1hcmVuYS1jcmFjb3dICVgDaLYBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAK4wNTOBsACAdICJGQ4OTE0OGYzLTVhMTQtNGRjNS1iMGU1LTAzOGFiMWU4NWZmM9gCAeACAQ&sid=b4ca43cfec7be560ba947fe0da43e943&dist=0&keep_landing=1&sb_price_type=total&type=total&activeTab=photosGallery';
 
 	const BOOKING_URL = (() => {
 		const today = new Date();
@@ -52,24 +53,17 @@
 			<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
 		</svg>`
 	];
-
-	const photos = [
-		{ src: asset('/images/1.jpg'), alt: 'Bright living room with modern furnishings and large windows' },
-		{ src: asset('/images/4.jpg'), alt: 'Spacious bedroom with a double bed and natural light' },
-		{ src: asset('/images/5.jpg'), alt: 'Contemporary kitchen fully equipped with appliances and utensils' },
-		{ src: asset('/images/7.jpg'), alt: 'Stylish bathroom with walk-in shower and clean fittings' },
-		{ src: asset('/images/19.jpg'), alt: 'Open dining area with a table for four and city views' },
-		{ src: asset('/images/33.jpg'), alt: 'Additional view of the apartment interior' }
-	];
 </script>
 
 <!-- Hero -->
 <section
 	class="relative flex min-h-[90vh] items-center justify-center bg-gray-800 bg-cover bg-center text-white"
-	style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('{asset('/images/27.jpg')}')"
+	style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('{asset(
+		'/images/27.jpg'
+	)}')"
 >
 	<div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
-		<p class="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-300 sm:text-base">
+		<p class="mb-3 text-sm font-semibold tracking-widest text-blue-300 uppercase sm:text-base">
 			{t.hero.location}
 		</p>
 		<h1 class="mb-6 text-4xl leading-tight font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
@@ -95,7 +89,7 @@
 				rel="noopener noreferrer"
 				class="inline-block rounded-xl bg-[#FF385C] px-8 py-4 text-base font-bold text-white shadow-lg transition hover:bg-[#E31C5F] active:scale-95 sm:text-lg"
 			>
-				Book on Airbnb
+				{t.hero.airbnb}
 			</a>
 		</div>
 	</div>
@@ -114,7 +108,9 @@
 
 		<ul class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 			{#each t.features as feature, i}
-				<li class="flex items-start gap-4 rounded-2xl border border-gray-100 bg-gray-50 p-6 sm:flex-col sm:gap-3">
+				<li
+					class="flex items-start gap-4 rounded-2xl border border-gray-100 bg-gray-50 p-6 sm:flex-col sm:gap-3"
+				>
 					<span class="shrink-0 rounded-xl bg-blue-100 p-3 text-blue-600">
 						{@html featureIcons[i]}
 					</span>
@@ -125,37 +121,5 @@
 				</li>
 			{/each}
 		</ul>
-	</div>
-</section>
-
-<!-- Gallery -->
-<section class="bg-gray-50 py-20 sm:py-28">
-	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-		<div class="mx-auto mb-12 max-w-xl text-center">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-				{t.gallery.title}
-			</h2>
-		</div>
-
-		<div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
-			<div class="overflow-hidden rounded-2xl sm:col-span-2 lg:col-span-2 lg:row-span-2">
-				<img
-					src={photos[0].src}
-					alt={photos[0].alt}
-					class="h-64 w-full object-cover transition duration-300 hover:scale-105 sm:h-80 lg:h-full"
-					loading="eager"
-				/>
-			</div>
-			{#each photos.slice(1) as photo}
-				<div class="overflow-hidden rounded-2xl">
-					<img
-						src={photo.src}
-						alt={photo.alt}
-						class="h-48 w-full object-cover transition duration-300 hover:scale-105 sm:h-56 lg:h-full"
-						loading="lazy"
-					/>
-				</div>
-			{/each}
-		</div>
 	</div>
 </section>

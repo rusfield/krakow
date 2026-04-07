@@ -5,6 +5,10 @@
 	let { data }: { data: LayoutData } = $props();
 	const t = $derived(data.t);
 
+	function thumbFor(imagePath: string) {
+		return imagePath.replace('/images/', '/images/thumbs/').replace(/\.(jpe?g)$/i, '.webp');
+	}
+
 	const sections = $derived([
 		{
 			key: 'bedroom' as const,
@@ -39,9 +43,9 @@
 		{
 			key: 'krakow' as const,
 			label: t.galleryPage.sections.krakow,
-			images: [35, 37, 38, 39, 41, 42, 44, 45].map((n) => `/images/krakow/${n}.jpg`).concat(
-				[36, 40, 43].map((n) => `/images/krakow/${n}.JPG`)
-			)
+			images: [35, 37, 38, 39, 41, 42, 44, 45]
+				.map((n) => `/images/krakow/${n}.jpg`)
+				.concat([36, 40, 43].map((n) => `/images/krakow/${n}.JPG`))
 		}
 	]);
 
@@ -84,10 +88,12 @@
 								onclick={() => openLightbox(asset(img))}
 							>
 								<img
-									src={asset(img)}
+									src={asset(thumbFor(img))}
 									alt="{section.label} photo"
 									class="aspect-square w-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-90"
 									loading="lazy"
+									decoding="async"
+									sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
 								/>
 							</button>
 						{/each}
@@ -109,11 +115,18 @@
 		<button
 			type="button"
 			aria-label="Close"
-			class="absolute -right-3 -top-3 z-10 rounded-full bg-white/15 p-1.5 text-white transition hover:bg-white/30"
+			class="absolute -top-3 -right-3 z-10 rounded-full bg-white/15 p-1.5 text-white transition hover:bg-white/30"
 			onclick={closeLightbox}
 		>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-				<path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+				class="size-5"
+			>
+				<path
+					d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"
+				/>
 			</svg>
 		</button>
 		{#if lightboxSrc}
@@ -121,6 +134,7 @@
 				src={lightboxSrc}
 				alt="Full size preview"
 				class="max-h-[90vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
+				decoding="async"
 			/>
 		{/if}
 	</div>

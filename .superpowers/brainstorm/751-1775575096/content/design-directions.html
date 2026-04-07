@@ -1,119 +1,394 @@
 <h2>Which design direction for the front page?</h2>
-<p class="subtitle">Same content, three completely different visual personalities. Click to select.</p>
+<p class="subtitle">
+	Same content, three completely different visual personalities. Click to select.
+</p>
 
 <div class="cards">
+	<!-- Option A: Warm Boutique -->
+	<div class="card" data-choice="a" onclick="toggleSelect(this)">
+		<div
+			class="card-image"
+			style="background: #fdf6ee; padding: 0; overflow: hidden; border-bottom: 1px solid #e8d8c0"
+		>
+			<!-- Mini mockup A -->
+			<div style="font-family: Georgia, serif">
+				<!-- Nav -->
+				<div
+					style="
+						background: #fff8f0;
+						padding: 8px 14px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						border-bottom: 1px solid #e8d8c0;
+					"
+				>
+					<span style="font-size: 11px; font-weight: 700; color: #6b3a1f; letter-spacing: 0.05em"
+						>KRAKOW APARTMENT</span
+					>
+					<span
+						style="
+							background: #c0622a;
+							color: white;
+							font-size: 8px;
+							padding: 3px 8px;
+							border-radius: 2px;
+						"
+						>BOOK NOW</span
+					>
+				</div>
+				<!-- Hero -->
+				<div
+					style="
+						background: linear-gradient(160deg, #2d1a0e 0%, #5c3317 100%);
+						padding: 28px 14px 22px;
+						text-align: center;
+						position: relative;
+					"
+				>
+					<div
+						style="
+							position: absolute;
+							inset: 0;
+							background: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><circle cx=%2220%22 cy=%2220%22 r=%2218%22 fill=%22none%22 stroke=%22rgba(255,200,120,0.06)%22 stroke-width=%221%22/></svg>')
+								repeat;
+						"
+					></div>
+					<p
+						style="
+							color: #f0b07a;
+							font-size: 7px;
+							letter-spacing: 0.15em;
+							margin: 0 0 4px;
+							text-transform: uppercase;
+						"
+					>
+						Kraków, Poland
+					</p>
+					<h1
+						style="
+							color: #fdf6ee;
+							font-size: 15px;
+							margin: 0 0 5px;
+							line-height: 1.25;
+							font-style: italic;
+						"
+					>
+						Your Home in the<br />Heart of Kraków
+					</h1>
+					<p style="color: #d4a57a; font-size: 7px; margin: 0 0 10px; line-height: 1.4">
+						A bright, modern apartment seconds from the Old Town.
+					</p>
+					<span
+						style="
+							background: #c0622a;
+							color: #fff8f0;
+							font-size: 7px;
+							padding: 5px 12px;
+							border-radius: 2px;
+							display: inline-block;
+						"
+						>Book on Booking.com</span
+					>
+				</div>
+				<!-- Features strip -->
+				<div style="background: #fff8f0; padding: 10px 14px; display: flex; gap: 8px">
+					<div
+						style="
+							flex: 1;
+							text-align: center;
+							border: 1px solid #e8d8c0;
+							border-radius: 4px;
+							padding: 6px 4px;
+						"
+					>
+						<div style="color: #c0622a; font-size: 10px">📍</div>
+						<div style="font-size: 6px; color: #6b3a1f; font-weight: 600; margin-top: 2px">
+							Central
+						</div>
+					</div>
+					<div
+						style="
+							flex: 1;
+							text-align: center;
+							border: 1px solid #e8d8c0;
+							border-radius: 4px;
+							padding: 6px 4px;
+						"
+					>
+						<div style="color: #c0622a; font-size: 10px">📶</div>
+						<div style="font-size: 6px; color: #6b3a1f; font-weight: 600; margin-top: 2px">
+							Wi-Fi
+						</div>
+					</div>
+					<div
+						style="
+							flex: 1;
+							text-align: center;
+							border: 1px solid #e8d8c0;
+							border-radius: 4px;
+							padding: 6px 4px;
+						"
+					>
+						<div style="color: #c0622a; font-size: 10px">🍳</div>
+						<div style="font-size: 6px; color: #6b3a1f; font-weight: 600; margin-top: 2px">
+							Kitchen
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-body">
+			<h3>A — Warm Boutique</h3>
+			<p>
+				Deep amber, terracotta, and cream tones. Serif typography. Feels like a boutique hotel
+				brochure — intimate and upscale.
+			</p>
+		</div>
+	</div>
 
-  <!-- Option A: Warm Boutique -->
-  <div class="card" data-choice="a" onclick="toggleSelect(this)">
-    <div class="card-image" style="background:#fdf6ee; padding:0; overflow:hidden; border-bottom:1px solid #e8d8c0;">
-      <!-- Mini mockup A -->
-      <div style="font-family:Georgia,serif;">
-        <!-- Nav -->
-        <div style="background:#fff8f0; padding:8px 14px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e8d8c0;">
-          <span style="font-size:11px; font-weight:700; color:#6b3a1f; letter-spacing:0.05em;">KRAKOW APARTMENT</span>
-          <span style="background:#c0622a; color:white; font-size:8px; padding:3px 8px; border-radius:2px;">BOOK NOW</span>
-        </div>
-        <!-- Hero -->
-        <div style="background:linear-gradient(160deg,#2d1a0e 0%,#5c3317 100%); padding:28px 14px 22px; text-align:center; position:relative;">
-          <div style="position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><circle cx=%2220%22 cy=%2220%22 r=%2218%22 fill=%22none%22 stroke=%22rgba(255,200,120,0.06)%22 stroke-width=%221%22/></svg>') repeat;"></div>
-          <p style="color:#f0b07a; font-size:7px; letter-spacing:0.15em; margin:0 0 4px; text-transform:uppercase;">Kraków, Poland</p>
-          <h1 style="color:#fdf6ee; font-size:15px; margin:0 0 5px; line-height:1.25; font-style:italic;">Your Home in the<br>Heart of Kraków</h1>
-          <p style="color:#d4a57a; font-size:7px; margin:0 0 10px; line-height:1.4;">A bright, modern apartment seconds from the Old Town.</p>
-          <span style="background:#c0622a; color:#fff8f0; font-size:7px; padding:5px 12px; border-radius:2px; display:inline-block;">Book on Booking.com</span>
-        </div>
-        <!-- Features strip -->
-        <div style="background:#fff8f0; padding:10px 14px; display:flex; gap:8px;">
-          <div style="flex:1; text-align:center; border:1px solid #e8d8c0; border-radius:4px; padding:6px 4px;">
-            <div style="color:#c0622a; font-size:10px;">📍</div>
-            <div style="font-size:6px; color:#6b3a1f; font-weight:600; margin-top:2px;">Central</div>
-          </div>
-          <div style="flex:1; text-align:center; border:1px solid #e8d8c0; border-radius:4px; padding:6px 4px;">
-            <div style="color:#c0622a; font-size:10px;">📶</div>
-            <div style="font-size:6px; color:#6b3a1f; font-weight:600; margin-top:2px;">Wi-Fi</div>
-          </div>
-          <div style="flex:1; text-align:center; border:1px solid #e8d8c0; border-radius:4px; padding:6px 4px;">
-            <div style="color:#c0622a; font-size:10px;">🍳</div>
-            <div style="font-size:6px; color:#6b3a1f; font-weight:600; margin-top:2px;">Kitchen</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <h3>A — Warm Boutique</h3>
-      <p>Deep amber, terracotta, and cream tones. Serif typography. Feels like a boutique hotel brochure — intimate and upscale.</p>
-    </div>
-  </div>
+	<!-- Option B: Dark Editorial -->
+	<div class="card" data-choice="b" onclick="toggleSelect(this)">
+		<div
+			class="card-image"
+			style="background: #0f0f0f; padding: 0; overflow: hidden; border-bottom: 1px solid #2a2a2a"
+		>
+			<div style="font-family: 'Helvetica Neue', sans-serif">
+				<!-- Nav -->
+				<div
+					style="
+						background: #111;
+						padding: 8px 14px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						border-bottom: 1px solid #222;
+					"
+				>
+					<span
+						style="
+							font-size: 10px;
+							font-weight: 800;
+							color: #f5f0e8;
+							letter-spacing: 0.12em;
+							text-transform: uppercase;
+						"
+						>Kraków Apt.</span
+					>
+					<span
+						style="
+							background: transparent;
+							color: #c9a96e;
+							font-size: 8px;
+							padding: 3px 8px;
+							border: 1px solid #c9a96e;
+						"
+						>BOOK</span
+					>
+				</div>
+				<!-- Hero -->
+				<div
+					style="
+						background: linear-gradient(180deg, #0a0a0a 0%, #1a1208 100%);
+						padding: 26px 14px 20px;
+						text-align: left;
+						border-bottom: 1px solid #222;
+					"
+				>
+					<p
+						style="
+							color: #c9a96e;
+							font-size: 7px;
+							letter-spacing: 0.2em;
+							margin: 0 0 6px;
+							text-transform: uppercase;
+						"
+					>
+						Kraków · Poland
+					</p>
+					<h1
+						style="
+							color: #f5f0e8;
+							font-size: 16px;
+							margin: 0 0 6px;
+							line-height: 1.15;
+							font-weight: 900;
+							text-transform: uppercase;
+							letter-spacing: -0.02em;
+						"
+					>
+						Your Home<br /><span style="color: #c9a96e">in the Heart</span><br />of Kraków
+					</h1>
+					<p
+						style="
+							color: #888;
+							font-size: 7px;
+							margin: 0 0 12px;
+							line-height: 1.5;
+							max-width: 160px;
+						"
+					>
+						Seconds from the Old Town. Sleep. Explore. Repeat.
+					</p>
+					<span
+						style="
+							background: #c9a96e;
+							color: #0a0a0a;
+							font-size: 7px;
+							padding: 5px 12px;
+							display: inline-block;
+							font-weight: 800;
+							letter-spacing: 0.05em;
+						"
+						>BOOK NOW →</span
+					>
+				</div>
+				<!-- Gallery hint -->
+				<div style="display: flex; gap: 2px; padding: 8px 14px; background: #111">
+					<div
+						style="
+							flex: 2;
+							height: 36px;
+							background: #1e1e1e;
+							border-radius: 2px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						"
+					>
+						<span style="color: #555; font-size: 7px">Living Room</span>
+					</div>
+					<div style="flex: 1; height: 36px; background: #1a1a1a; border-radius: 2px"></div>
+					<div style="flex: 1; height: 36px; background: #1a1a1a; border-radius: 2px"></div>
+				</div>
+			</div>
+		</div>
+		<div class="card-body">
+			<h3>B — Dark Editorial</h3>
+			<p>
+				Near-black background with gold accents. Bold, uppercase headlines. Moody and sophisticated
+				— like a luxury travel magazine.
+			</p>
+		</div>
+	</div>
 
-  <!-- Option B: Dark Editorial -->
-  <div class="card" data-choice="b" onclick="toggleSelect(this)">
-    <div class="card-image" style="background:#0f0f0f; padding:0; overflow:hidden; border-bottom:1px solid #2a2a2a;">
-      <div style="font-family:'Helvetica Neue',sans-serif;">
-        <!-- Nav -->
-        <div style="background:#111; padding:8px 14px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #222;">
-          <span style="font-size:10px; font-weight:800; color:#f5f0e8; letter-spacing:0.12em; text-transform:uppercase;">Kraków Apt.</span>
-          <span style="background:transparent; color:#c9a96e; font-size:8px; padding:3px 8px; border:1px solid #c9a96e;">BOOK</span>
-        </div>
-        <!-- Hero -->
-        <div style="background:linear-gradient(180deg,#0a0a0a 0%,#1a1208 100%); padding:26px 14px 20px; text-align:left; border-bottom:1px solid #222;">
-          <p style="color:#c9a96e; font-size:7px; letter-spacing:0.2em; margin:0 0 6px; text-transform:uppercase;">Kraków · Poland</p>
-          <h1 style="color:#f5f0e8; font-size:16px; margin:0 0 6px; line-height:1.15; font-weight:900; text-transform:uppercase; letter-spacing:-0.02em;">Your Home<br><span style="color:#c9a96e;">in the Heart</span><br>of Kraków</h1>
-          <p style="color:#888; font-size:7px; margin:0 0 12px; line-height:1.5; max-width:160px;">Seconds from the Old Town. Sleep. Explore. Repeat.</p>
-          <span style="background:#c9a96e; color:#0a0a0a; font-size:7px; padding:5px 12px; display:inline-block; font-weight:800; letter-spacing:0.05em;">BOOK NOW →</span>
-        </div>
-        <!-- Gallery hint -->
-        <div style="display:flex; gap:2px; padding:8px 14px; background:#111;">
-          <div style="flex:2; height:36px; background:#1e1e1e; border-radius:2px; display:flex; align-items:center; justify-content:center;">
-            <span style="color:#555; font-size:7px;">Living Room</span>
-          </div>
-          <div style="flex:1; height:36px; background:#1a1a1a; border-radius:2px;"></div>
-          <div style="flex:1; height:36px; background:#1a1a1a; border-radius:2px;"></div>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <h3>B — Dark Editorial</h3>
-      <p>Near-black background with gold accents. Bold, uppercase headlines. Moody and sophisticated — like a luxury travel magazine.</p>
-    </div>
-  </div>
-
-  <!-- Option C: Minimalist Nordic -->
-  <div class="card" data-choice="c" onclick="toggleSelect(this)">
-    <div class="card-image" style="background:#ffffff; padding:0; overflow:hidden; border-bottom:1px solid #e5e5e5;">
-      <div style="font-family:'Helvetica Neue',Helvetica,sans-serif;">
-        <!-- Nav -->
-        <div style="background:#fff; padding:8px 14px; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #111;">
-          <span style="font-size:10px; font-weight:800; color:#111; letter-spacing:0.08em;">KRAKÓW APT</span>
-          <span style="background:#111; color:#fff; font-size:8px; padding:3px 8px;">Book</span>
-        </div>
-        <!-- Hero - large text focused -->
-        <div style="background:#fff; padding:22px 14px 16px;">
-          <div style="width:28px; height:2px; background:#111; margin-bottom:10px;"></div>
-          <p style="color:#888; font-size:7px; letter-spacing:0.12em; margin:0 0 5px; text-transform:uppercase;">Kraków, Poland</p>
-          <h1 style="color:#111; font-size:17px; margin:0 0 8px; line-height:1.1; font-weight:900; letter-spacing:-0.03em;">Your Home<br>in the Heart<br>of Kraków</h1>
-          <p style="color:#666; font-size:7px; margin:0 0 12px; line-height:1.6; max-width:155px;">Modern apartment, seconds from the Old Town.</p>
-          <span style="background:#111; color:#fff; font-size:7px; padding:5px 14px; display:inline-block;">Book on Booking.com</span>
-        </div>
-        <!-- Feature list: clean lines -->
-        <div style="border-top:1px solid #eee; margin:0 14px;">
-          <div style="padding:5px 0; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:7px; color:#111; font-weight:600;">Central Location</span>
-            <span style="font-size:8px; color:#bbb;">→</span>
-          </div>
-          <div style="padding:5px 0; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:7px; color:#111; font-weight:600;">High-Speed Wi-Fi</span>
-            <span style="font-size:8px; color:#bbb;">→</span>
-          </div>
-          <div style="padding:5px 0; display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:7px; color:#111; font-weight:600;">Self Check-In</span>
-            <span style="font-size:8px; color:#bbb;">→</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <h3>C — Minimalist Nordic</h3>
-      <p>Pure white with black typography, hairline rules, no decoration. Clean and architectural — like a Scandinavian design studio.</p>
-    </div>
-  </div>
-
+	<!-- Option C: Minimalist Nordic -->
+	<div class="card" data-choice="c" onclick="toggleSelect(this)">
+		<div
+			class="card-image"
+			style="background: #ffffff; padding: 0; overflow: hidden; border-bottom: 1px solid #e5e5e5"
+		>
+			<div style="font-family: 'Helvetica Neue', Helvetica, sans-serif">
+				<!-- Nav -->
+				<div
+					style="
+						background: #fff;
+						padding: 8px 14px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						border-bottom: 2px solid #111;
+					"
+				>
+					<span style="font-size: 10px; font-weight: 800; color: #111; letter-spacing: 0.08em"
+						>KRAKÓW APT</span
+					>
+					<span style="background: #111; color: #fff; font-size: 8px; padding: 3px 8px">Book</span>
+				</div>
+				<!-- Hero - large text focused -->
+				<div style="background: #fff; padding: 22px 14px 16px">
+					<div style="width: 28px; height: 2px; background: #111; margin-bottom: 10px"></div>
+					<p
+						style="
+							color: #888;
+							font-size: 7px;
+							letter-spacing: 0.12em;
+							margin: 0 0 5px;
+							text-transform: uppercase;
+						"
+					>
+						Kraków, Poland
+					</p>
+					<h1
+						style="
+							color: #111;
+							font-size: 17px;
+							margin: 0 0 8px;
+							line-height: 1.1;
+							font-weight: 900;
+							letter-spacing: -0.03em;
+						"
+					>
+						Your Home<br />in the Heart<br />of Kraków
+					</h1>
+					<p
+						style="
+							color: #666;
+							font-size: 7px;
+							margin: 0 0 12px;
+							line-height: 1.6;
+							max-width: 155px;
+						"
+					>
+						Modern apartment, seconds from the Old Town.
+					</p>
+					<span
+						style="
+							background: #111;
+							color: #fff;
+							font-size: 7px;
+							padding: 5px 14px;
+							display: inline-block;
+						"
+						>Book on Booking.com</span
+					>
+				</div>
+				<!-- Feature list: clean lines -->
+				<div style="border-top: 1px solid #eee; margin: 0 14px">
+					<div
+						style="
+							padding: 5px 0;
+							border-bottom: 1px solid #eee;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+						"
+					>
+						<span style="font-size: 7px; color: #111; font-weight: 600">Central Location</span>
+						<span style="font-size: 8px; color: #bbb">→</span>
+					</div>
+					<div
+						style="
+							padding: 5px 0;
+							border-bottom: 1px solid #eee;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+						"
+					>
+						<span style="font-size: 7px; color: #111; font-weight: 600">High-Speed Wi-Fi</span>
+						<span style="font-size: 8px; color: #bbb">→</span>
+					</div>
+					<div
+						style="
+							padding: 5px 0;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+						"
+					>
+						<span style="font-size: 7px; color: #111; font-weight: 600">Self Check-In</span>
+						<span style="font-size: 8px; color: #bbb">→</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-body">
+			<h3>C — Minimalist Nordic</h3>
+			<p>
+				Pure white with black typography, hairline rules, no decoration. Clean and architectural —
+				like a Scandinavian design studio.
+			</p>
+		</div>
+	</div>
 </div>

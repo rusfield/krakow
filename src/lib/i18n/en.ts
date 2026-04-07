@@ -3,13 +3,22 @@ import type { Dictionary } from './types';
 const en: Dictionary = {
 	nav: {
 		title: 'Royal Blue Apartment Tauron Arena Cracow',
-		book: 'Book on Booking.com'
+		book: 'Booking.com',
+		airbnb: 'Airbnb',
+		links: {
+			about: 'About Us',
+			facilities: 'Facilities',
+			guestInfo: 'House Rules',
+			gallery: 'Gallery',
+			contact: 'Contact'
+		}
 	},
 	hero: {
 		location: 'Krakow, Poland',
 		headline: 'Royal Blue Apartment\nTauron Arena Cracow',
 		sub: "A bright, modern apartment seconds from the Old Town — the perfect base for exploring one of Europe's most beautiful cities.",
-		book: 'Book on Booking.com'
+		book: 'Book on Booking.com',
+		airbnb: 'Book on Airbnb'
 	},
 	welcome: {
 		title: 'Welcome to the Apartment',
@@ -42,9 +51,6 @@ const en: Dictionary = {
 			description: 'Stay cool in summer and cosy in winter with climate control in every room.'
 		}
 	],
-	gallery: {
-		title: 'Inside the Apartment'
-	},
 	guestInfo: {
 		pageTitle: 'House Rules',
 		intro: 'Staying in the apartment constitutes acceptance of the following rules.',
@@ -139,7 +145,7 @@ const en: Dictionary = {
 					'The apartment is equipped with a smoke detector, fire extinguisher, fire blanket, and a first aid kit located in marked places.',
 					'In case of emergency, please contact the appropriate emergency services immediately. A list of emergency numbers is attached.'
 				]
-			},
+			}
 		]
 	},
 	galleryPage: {
@@ -166,27 +172,57 @@ const en: Dictionary = {
 			{
 				title: 'Bedroom',
 				icon: '🛏️',
-				items: ['King-size bed', 'Wardrobe with hangers', 'Blackout curtains', 'Extra pillows and blankets']
+				items: [
+					'King-size bed',
+					'Wardrobe with hangers',
+					'Blackout curtains',
+					'Extra pillows and blankets'
+				]
 			},
 			{
 				title: 'Bathroom',
 				icon: '🚿',
-				items: ['Bathtub and shower', 'Underfloor heating', 'Hairdryer', 'Complimentary toiletries', 'Washing machine', 'Towels, bathrobes, and slippers']
+				items: [
+					'Bathtub and shower',
+					'Underfloor heating',
+					'Hairdryer',
+					'Complimentary toiletries',
+					'Washing machine',
+					'Towels, bathrobes, and slippers'
+				]
 			},
 			{
 				title: 'Kitchen',
 				icon: '🍳',
-				items: ['Induction hob', 'Oven and microwave', 'Fridge and freezer', 'Dishwasher', 'Coffee machine', 'Full set of cookware and utensils']
+				items: [
+					'Induction hob',
+					'Oven and microwave',
+					'Fridge and freezer',
+					'Dishwasher',
+					'Coffee machine',
+					'Full set of cookware and utensils'
+				]
 			},
 			{
 				title: 'Living Area',
 				icon: '🛋️',
-				items: ['Smart TV', 'High-speed Wi-Fi', 'Air conditioning', 'Balcony with park view', 'Work desk']
+				items: [
+					'Smart TV',
+					'High-speed Wi-Fi',
+					'Air conditioning',
+					'Balcony with park view',
+					'Work desk'
+				]
 			},
 			{
 				title: 'Building & Parking',
 				icon: '🏢',
-				items: ['Private parking space in underground garage', 'Secure entrance with intercom', 'Lift', 'Garden and outdoor area']
+				items: [
+					'Private parking space in underground garage',
+					'Secure entrance with intercom',
+					'Lift',
+					'Garden and outdoor area'
+				]
 			}
 		]
 	},
@@ -196,7 +232,7 @@ const en: Dictionary = {
 			'Royal Blue Apartment Tauron Arena Cracow is a modern, comfortable 32 m² apartment, ideal for 2 people, located in the heart of one of the most beautiful cities in Europe, where centuries of history blend harmoniously with vibrant modern life. The Apartment was created with great attention to detail and comfort, tranquility, and those touches of indulgence in mind that transform a simple stay into a memorable experience.',
 			'The apartment features a balcony overlooking the park, air conditioning, Wi-Fi, TV, a bathroom with a washing machine, hairdryer, underfloor heating, bathtub/shower, and complimentary toiletries, a fully equipped kitchen, as well as private parking in an underground garage. We provide towels, bed linen, bathrobes, and slippers. 24/7 check-in and the high standard of the apartment ensure a comfortable stay, whether for tourism or business.',
 			'It is situated in the Park of Polish Aviators, in the immediate vicinity of Tauron Arena Kraków and the Polish Aviation Museum, along with the grounds of the former Rakowice-Czyżyny airfield, within a property that includes a private garden and security.',
-			'The beautiful, very peaceful and green surroundings offer plenty of opportunities for sports and recreation (water park, tennis courts, outdoor gyms, skatepark, disc golf course, running and Nordic walking trails). At the same time, the location provides excellent transport connections to the city center and Kraków\'s main attractions: 1.0 km to Tauron Arena, 170 m to the Polish Aviation Museum and 500 m to the Rakowice-Czyżyny airfield area, 350 m to tram stops with direct access to key locations across Kraków, 11 minutes by tram to Kraków Główny railway station, and 20 km to Kraków Balice Airport.',
+			"The beautiful, very peaceful and green surroundings offer plenty of opportunities for sports and recreation (water park, tennis courts, outdoor gyms, skatepark, disc golf course, running and Nordic walking trails). At the same time, the location provides excellent transport connections to the city center and Kraków's main attractions: 1.0 km to Tauron Arena, 170 m to the Polish Aviation Museum and 500 m to the Rakowice-Czyżyny airfield area, 350 m to tram stops with direct access to key locations across Kraków, 11 minutes by tram to Kraków Główny railway station, and 20 km to Kraków Balice Airport.",
 			'Kraków enchants visitors at any time of year – with history etched into the stones of the Main Market Square and Wawel Castle, breathtaking architecture, the atmospheric streets of Kazimierz, an abundance of cafés and restaurants, numerous cultural, musical, and sporting events, as well as the magic and charm of its hidden gems. The Royal Blue Apartment offers an ideal setting from which to explore this richness at your own pace. Whether this is your first visit or a long-awaited return, Kraków always has something exceptional to offer.',
 			'I hope your stay here will allow you to fully experience the atmosphere of the Royal City of Kraków and discover its treasures and flavors.'
 		]
