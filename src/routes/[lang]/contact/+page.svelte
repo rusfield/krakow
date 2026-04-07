@@ -89,7 +89,7 @@
 						</address>
 					</div>
 
-					<div class="flex w-full flex-col gap-3 sm:w-48 sm:shrink-0">
+					<div class="flex w-full flex-col gap-3 sm:w-48 sm:shrink-0 sm:self-center">
 						<a
 							href={GOOGLE_MAPS_URL}
 							target="_blank"
