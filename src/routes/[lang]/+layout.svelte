@@ -45,6 +45,23 @@
 	// Sub-path after /{lang} — e.g. "guest-info" or "" for home
 	const subPath = $derived(page.url.pathname.slice(base.length).split('/').slice(2).join('/'));
 
+	const currentPageTitle = $derived.by(() => {
+		switch (subPath) {
+			case 'about':
+				return data.t.nav.links.about;
+			case 'facilities':
+				return data.t.nav.links.facilities;
+			case 'guest-info':
+				return data.t.nav.links.guestInfo;
+			case 'gallery':
+				return data.t.nav.links.gallery;
+			case 'contact':
+				return data.t.nav.links.contact;
+			default:
+				return data.t.nav.title;
+		}
+	});
+
 	const CurrentFlag = $derived(langMeta[data.lang].flag);
 
 	let mobileMenuOpen = $state(false);
@@ -62,6 +79,10 @@
 		return () => document.removeEventListener('click', handleClick);
 	});
 </script>
+
+<svelte:head>
+	<title>{currentPageTitle}</title>
+</svelte:head>
 
 <header class="sticky top-0 z-50 bg-white shadow-sm">
 	<div

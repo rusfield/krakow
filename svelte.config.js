@@ -5,7 +5,7 @@ const config = {
 	kit: {
 		adapter: adapter({ fallback: '404.html' }),
 		paths: { base: process.env.GITHUB_ACTIONS ? '/krakow' : '' },
-		prerender: { entries: ['/', '/en', '/no', '/pl'] }
+		prerender: { entries: ['/', '/en', '/pl'] }
 	}
 };
 
