@@ -2,12 +2,12 @@ import type { Dictionary } from './types';
 
 const pl: Dictionary = {
 	nav: {
-		title: 'Apartament w Krakowie',
+		title: 'Royal Blue Apartment Tauron Arena Cracow',
 		book: 'Zarezerwuj na Booking.com'
 	},
 	hero: {
 		location: 'Kraków, Polska',
-		headline: 'Twój dom w sercu\nKrakowa',
+		headline: 'Royal Blue Apartment\nTauron Arena Cracow',
 		sub: 'Jasny, nowoczesny apartament kilka kroków od Starego Miasta – idealna baza do odkrywania jednego z najpiękniejszych miast Europy.',
 		book: 'Zarezerwuj na Booking.com'
 	},
@@ -46,7 +46,7 @@ const pl: Dictionary = {
 		title: 'Wnętrze apartamentu'
 	},
 	guestInfo: {
-		pageTitle: 'Informacje dla gości',
+		pageTitle: 'Zasady pobytu',
 		intro: 'Pobyt w apartamencie jest równoznaczny z akceptacją poniższych zasad.',
 		sections: [
 			{
@@ -65,7 +65,7 @@ const pl: Dictionary = {
 				icon: '🔑',
 				items: [
 					'Klucze do apartamentu i pilot do garażu – jeśli zarezerwowano miejsce parkingowe – zostaną przekazane zgodnie z informacjami przesłanymi przed przyjazdem (wręczone osobiście przez gospodarza lub odebrane ze skrzynki przy drzwiach wejściowych).',
-					'Kod do domofonu i bramy wejściowej: 1712',
+					'Kod do domofonu i bramy wejściowej zostanie przekazany przed przyjazdem.',
 					'Udostępnianie kodów dostępu lub kluczy osobom trzecim jest surowo zabronione.',
 					'Apartament musi być zawsze zamknięty na klucz po opuszczeniu. Prosimy o wyłączenie świateł, zamknięcie okien i upewnienie się, że żadne urządzenia domowe nie są pozostawione w trybie pracy, szczególnie pralka, zmywarka lub klimatyzacja.',
 					'Można również korzystać z terenów zielonych wokół budynku, w tym z infrastruktury rekreacyjnej.'
@@ -140,13 +140,65 @@ const pl: Dictionary = {
 					'W przypadku nagłego zagrożenia prosimy o natychmiastowy kontakt z odpowiednimi służbami ratunkowymi. Lista numerów alarmowych jest załączona.'
 				]
 			},
+		]
+	},
+	galleryPage: {
+		pageTitle: 'Galeria',
+		sections: {
+			bathroom: 'Łazienka',
+			bedroom: 'Sypialnia',
+			hallway: 'Korytarz',
+			kitchen: 'Kuchnia',
+			krakow: 'Kraków',
+			outside: 'Na zewnątrz',
+			wardrobe: 'Garderoba'
+		}
+	},
+	contact: {
+		pageTitle: 'Kontakt',
+		phone: 'WhatsApp / Telefon',
+		email: 'E-mail',
+		address: 'Adres'
+	},
+	facilities: {
+		pageTitle: 'Wyposażenie',
+		sections: [
 			{
-				title: 'Miłość',
-				icon: '❤️',
-				items: [
-					'Kraków to piękne miasto i uprawianie tu miłości jest jak najbardziej w porządku. Prosimy jednak zabrać ze sobą prezerwatywy przy wyjeździe.'
-				]
+				title: 'Sypialnia',
+				icon: '🛏️',
+				items: ['Łóżko king-size', 'Szafa z wieszakami', 'Zasłony zaciemniające', 'Dodatkowe poduszki i koce']
+			},
+			{
+				title: 'Łazienka',
+				icon: '🚿',
+				items: ['Wanna i prysznic', 'Ogrzewana podłoga', 'Suszarka do włosów', 'Darmowe kosmetyki', 'Pralka', 'Ręczniki, szlafroki i kapcie']
+			},
+			{
+				title: 'Kuchnia',
+				icon: '🍳',
+				items: ['Płyta indukcyjna', 'Piekarnik i mikrofalówka', 'Lodówka z zamrażarką', 'Zmywarka', 'Ekspres do kawy', 'Pełen zestaw naczyń i sztućców']
+			},
+			{
+				title: 'Salon',
+				icon: '🛋️',
+				items: ['Smart TV', 'Szybkie Wi-Fi', 'Klimatyzacja', 'Balkon z widokiem na park', 'Biurko']
+			},
+			{
+				title: 'Budynek i parking',
+				icon: '🏢',
+				items: ['Prywatne miejsce parkingowe w garażu podziemnym', 'Bezpieczne wejście z domofonem', 'Winda', 'Ogród i teren zewnętrzny']
 			}
+		]
+	},
+	about: {
+		pageTitle: 'O apartamencie',
+		paragraphs: [
+			'Royal Blue Apartment Tauron Arena Cracow to nowoczesny, komfortowy apartament o powierzchni 32 m², idealny dla 2 osób, położony w sercu jednego z najpiękniejszych miast Europy, w którym wieki historii harmonijnie łączą się z tętniącą życiem nowoczesnością. Apartament powstał z dbałością o szczegóły i myślą o wygodzie, spokoju i drobnych przyjemnościach, które sprawiają, że wyjazd nabiera wyjątkowego charakteru.',
+			'Apartament oferuje balkon z widokiem na park, klimatyzację, wifi, TV, łazienkę z pralką, suszarką do włosów, ogrzewaną podłogą, wanną/prysznicem i darmowymi kosmetykami, prywatny parking w garażu podziemnym, w pełni wyposażoną kuchnię. Zapewniamy ręczniki, pościel, szlafroki i kapcie. Możliwość zameldowania 24/7 oraz wysoki standard apartamentu zapewniają komfortowy pobyt zarówno turystyczny, jak i służbowy.',
+			'Apartament położony jest w Parku Lotników, w bezpośrednim sąsiedztwie Tauron Areny Kraków i Muzeum Lotnictwa Polskiego wraz z terenem dawnego lotniska Rakowice Czyżyny, na posesji z przynależnym do budynku ogrodem oraz ochroną.',
+			'Piękna, bardzo spokojna i pełna zieleni okolica oferuje możliwość uprawiania sportu i rekreacji (park wodny, korty tenisowe, zewnętrzne siłownie, skatepark, pole do disc golfa, pętle biegowe i do nordic walking). Jednocześnie zapewnia doskonałe połączenia komunikacyjne z centrum miasta i najważniejszymi atrakcjami Krakowa: 1,0 km do Tauron Areny, 170 m do Muzeum Lotnictwa Polskiego i 500 m do terenu Lotniska Rakowice Czyżyny, 350 m do przystanków tramwajowych do najważniejszych miejsc w całym Krakowie, 11 minut tramwajem do Dworca Kraków Główny, 20 km do Lotniska Kraków Balice.',
+			'Kraków zachwyca o każdej porze roku: historią zapisaną w murach Rynku Głównego i Wawelu, zapierającą dech w piersiach architekturą, klimatem nastrojowych uliczek Kazimierza, bogactwem kawiarni, restauracji, wydarzeń kulturalnych, muzycznych i sportowych oraz magią i urokiem miejsc nieoczywistych, a Apartament Royal Blue jest doskonałą bazą, by korzystać z tej obfitości w Państwa własnym rytmie. Niezależnie od tego, czy są Państwo tu po raz pierwszy, czy wracają do Krakowa kolejny raz, miasto zawsze ma coś wyjątkowego do zaoferowania.',
+			'Mam nadzieję, że pobyt tu pozwoli Państwu w pełni poczuć atmosferę Królewskiego Miasta Krakowa oraz odkryć jego tajemnice i smaki.'
 		]
 	}
 };

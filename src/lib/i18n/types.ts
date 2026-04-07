@@ -30,4 +30,34 @@ export interface Dictionary {
 			items: string[];
 		}>;
 	};
+	about: {
+		pageTitle: string;
+		paragraphs: string[];
+	};
+	galleryPage: {
+		pageTitle: string;
+		sections: {
+			bathroom: string;
+			bedroom: string;
+			hallway: string;
+			kitchen: string;
+			krakow: string;
+			outside: string;
+			wardrobe: string;
+		};
+	};
+	contact: {
+		pageTitle: string;
+		phone: string;
+		email: string;
+		address: string;
+	};
+	facilities: {
+		pageTitle: string;
+		sections: Array<{
+			title: string;
+			icon: string;
+			items: string[];
+		}>;
+	};
 }

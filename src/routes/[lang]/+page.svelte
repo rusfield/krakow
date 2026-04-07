@@ -6,7 +6,23 @@
 
 	import { asset } from '$app/paths';
 
-	const BOOKING_URL = 'https://www.booking.com';
+	const BASE_BOOKING_URL = 'https://www.booking.com/hotel/pl/royal-blue-apartment-tauron-arena-cracow.no.html?aid=356980&label=gog235jc-10CAsotgFCKHJveWFsLWJsdWUtYXBhcnRtZW50LXRhdXJvbi1hcmVuYS1jcmFjb3dICVgDaLYBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAK4wNTOBsACAdICJGQ4OTE0OGYzLTVhMTQtNGRjNS1iMGU1LTAzOGFiMWU4NWZmM9gCAeACAQ&sid=b4ca43cfec7be560ba947fe0da43e943&dist=0&keep_landing=1&sb_price_type=total&type=total&activeTab=photosGallery';
+
+	const BOOKING_URL = (() => {
+		const today = new Date();
+		const fmt = (d: Date) => d.toISOString().slice(0, 10);
+		const checkin = fmt(today);
+		const checkout = fmt(new Date(today.getTime() + 2 * 86400000));
+		return `${BASE_BOOKING_URL}&checkin=${checkin}&checkout=${checkout}`;
+	})();
+
+	const AIRBNB_URL = (() => {
+		const today = new Date();
+		const fmt = (d: Date) => d.toISOString().slice(0, 10);
+		const checkin = fmt(today);
+		const checkout = fmt(new Date(today.getTime() + 2 * 86400000));
+		return `https://www.airbnb.pl/rooms/1649459036475846895?check_in=${checkin}&check_out=${checkout}`;
+	})();
 
 	// Icons are presentation-only; titles/descriptions come from the dictionary
 	const featureIcons = [
@@ -64,14 +80,24 @@
 		<p class="mb-8 text-lg leading-relaxed text-gray-200 sm:text-xl">
 			{t.hero.sub}
 		</p>
-		<a
-			href={BOOKING_URL}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="inline-block rounded-xl bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg transition hover:bg-blue-700 active:scale-95 sm:text-lg"
-		>
-			{t.hero.book}
-		</a>
+		<div class="flex flex-wrap justify-center gap-3">
+			<a
+				href={BOOKING_URL}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="inline-block rounded-xl bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg transition hover:bg-blue-700 active:scale-95 sm:text-lg"
+			>
+				{t.hero.book}
+			</a>
+			<a
+				href={AIRBNB_URL}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="inline-block rounded-xl bg-[#FF385C] px-8 py-4 text-base font-bold text-white shadow-lg transition hover:bg-[#E31C5F] active:scale-95 sm:text-lg"
+			>
+				Book on Airbnb
+			</a>
+		</div>
 	</div>
 </section>
 

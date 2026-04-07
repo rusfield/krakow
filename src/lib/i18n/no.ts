@@ -2,12 +2,12 @@ import type { Dictionary } from './types';
 
 const no: Dictionary = {
 	nav: {
-		title: 'Krakow-leilighet',
+		title: 'Royal Blue Apartment Tauron Arena Cracow',
 		book: 'Book på Booking.com'
 	},
 	hero: {
 		location: 'Krakow, Polen',
-		headline: 'Ditt hjem i hjertet\nav Krakow',
+		headline: 'Royal Blue Apartment\nTauron Arena Cracow',
 		sub: 'En lys, moderne leilighet noen sekunder fra gamlebyen – det perfekte utgangspunktet for å utforske en av Europas vakreste byer.',
 		book: 'Book på Booking.com'
 	},
@@ -46,7 +46,7 @@ const no: Dictionary = {
 		title: 'Inne i leiligheten'
 	},
 	guestInfo: {
-		pageTitle: 'Gjesteinformasjon',
+		pageTitle: 'Husregler',
 		intro: 'Ved å oppholde seg i leiligheten aksepterer man følgende regler.',
 		sections: [
 			{
@@ -65,7 +65,7 @@ const no: Dictionary = {
 				icon: '🔑',
 				items: [
 					'Leilighetsnøklene og garasjefjernkontrollen – dersom parkeringsplass er reservert – vil bli utlevert som spesifisert i informasjonen mottatt før ankomst (enten overlevert personlig av verten eller hentet fra nøkkelboksen ved inngangsdøren).',
-					'Interntelefon og portåpningskode: 1712',
+					'Kode til interntelefon og inngangsport vil bli oppgitt før ankomst.',
 					'Det er strengt forbudt å dele tilgangskoder eller nøkler med tredjeparter.',
 					'Leiligheten må alltid låses når man forlater den. Vennligst slå av lysene, lukk vinduene og sørg for at ingen husholdningsapparater er igjen i drift, spesielt vaskemaskin, oppvaskmaskin eller klimaanlegg.',
 					'Du kan også benytte grøntarealet rundt bygningen, inkludert dens rekreasjonstilbud.'
@@ -140,13 +140,65 @@ const no: Dictionary = {
 					'I tilfelle nødsituasjon, vennligst kontakt de aktuelle nødetatene umiddelbart. En liste over nødnumre er vedlagt.'
 				]
 			},
+		]
+	},
+	galleryPage: {
+		pageTitle: 'Galleri',
+		sections: {
+			bathroom: 'Bad',
+			bedroom: 'Soverom',
+			hallway: 'Gang',
+			kitchen: 'Kjøkken',
+			krakow: 'Kraków',
+			outside: 'Utenfor',
+			wardrobe: 'Garderobe'
+		}
+	},
+	contact: {
+		pageTitle: 'Kontakt',
+		phone: 'WhatsApp / Telefon',
+		email: 'E-post',
+		address: 'Adresse'
+	},
+	facilities: {
+		pageTitle: 'Fasiliteter',
+		sections: [
 			{
-				title: 'Kjærlighet',
-				icon: '❤️',
-				items: [
-					'Krakow er en vakker by, og å elske her er helt greit. Men vennligst ta med kondomer når du drar.'
-				]
+				title: 'Soverom',
+				icon: '🛏️',
+				items: ['King-size seng', 'Garderobe med kleshengere', 'Mørkleggingsgardiner', 'Ekstra puter og pledd']
+			},
+			{
+				title: 'Bad',
+				icon: '🚿',
+				items: ['Badekar og dusj', 'Gulvvarme', 'Hårtørker', 'Gratis toalettsaker', 'Vaskemaskin', 'Håndklær, badekåper og tøfler']
+			},
+			{
+				title: 'Kjøkken',
+				icon: '🍳',
+				items: ['Induksjonstopp', 'Stekeovn og mikrobølgeovn', 'Kjøleskap med fryser', 'Oppvaskmaskin', 'Kaffemaskin', 'Fullt sett med kokekar og bestikk']
+			},
+			{
+				title: 'Stue',
+				icon: '🛋️',
+				items: ['Smart-TV', 'Høyhastighets Wi-Fi', 'Klimaanlegg', 'Balkong med utsikt over parken', 'Skrivebord']
+			},
+			{
+				title: 'Bygning og parkering',
+				icon: '🏢',
+				items: ['Privat parkeringsplass i underjordisk garasje', 'Sikker inngang med interntelefon', 'Heis', 'Hage og uteareal']
 			}
+		]
+	},
+	about: {
+		pageTitle: 'Om leiligheten',
+		paragraphs: [
+			'Royal Blue Apartment Tauron Arena Cracow er en moderne, komfortabel leilighet på 32 m², ideell for 2 personer, beliggende i hjertet av en av Europas vakreste byer, der århundrers historie harmonisk møter et pulserende moderne byliv. Leiligheten er skapt med stor oppmerksomhet for detaljer, med fokus på komfort, ro og de små nytelsene som gjør et opphold virkelig minneverdig.',
+			'Leiligheten har balkong med utsikt over parken, klimaanlegg, Wi-Fi, TV, bad med vaskemaskin, hårtørker, gulvvarme, badekar/dusj og gratis toalettsaker, fullt utstyrt kjøkken, samt privat parkering i underjordisk garasje. Vi tilbyr håndklær, sengetøy, badekåper og tøfler. Innsjekk 24/7 og høy standard sikrer et komfortabelt opphold, enten du er på ferie eller forretningsreise.',
+			'Leiligheten ligger i Flygerparken (Park Lotników), i umiddelbar nærhet til Tauron Arena Kraków og Polsk Luftfartsmuseum, samt det tidligere Rakowice-Czyżyny-flyplassområdet, på en eiendom med tilhørende hage og vakthold.',
+			'De vakre, svært rolige og grønne omgivelsene byr på mange muligheter for sport og rekreasjon (vannpark, tennisbaner, utendørs treningsapparater, skatepark, discgolfbane, løpe- og nordicwalkingruter). Samtidig gir beliggenheten utmerkede transportforbindelser til bysentrum og Kraków viktigste severdigheter: 1,0 km til Tauron Arena, 170 m til Polsk Luftfartsmuseum og 500 m til Rakowice-Czyżyny-flyplassområdet, 350 m til trikkeholdeplasser med direkte forbindelser til sentrale steder i hele Kraków, 11 minutters trikketur til Kraków Główny jernbanestasjon, og 20 km til Kraków Balice lufthavn.',
+			'Kraków fascinerer besøkende til enhver tid på året – med historien inngravert i steinene på Stortorget og Wawelborgen, betagende arkitektur, de stemningsfulle gatene i Kazimierz, et rikt utvalg av kafeer og restauranter, tallrike kulturelle, musikalske og sportslige arrangementer, samt magien og sjarmen ved byens skjulte perler. Royal Blue Apartment er det ideelle utgangspunktet for å utforske denne rikdommen i eget tempo. Enten dette er ditt første besøk eller et kjærkomment gjensyn, har Kraków alltid noe eksepsjonelt å by på.',
+			'Jeg håper oppholdet ditt her vil gi deg muligheten til å fullt ut oppleve atmosfæren i den kongelige byen Kraków og oppdage dens skatter og smaker.'
 		]
 	}
 };

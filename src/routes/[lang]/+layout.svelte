@@ -13,7 +13,23 @@
 	setContext('t', { get current() { return data.t; } });
 	setContext('lang', { get current() { return data.lang; } });
 
-	const BOOKING_URL = 'https://www.booking.com';
+	const BASE_BOOKING_URL = 'https://www.booking.com/hotel/pl/royal-blue-apartment-tauron-arena-cracow.no.html?aid=356980&label=gog235jc-10CAsotgFCKHJveWFsLWJsdWUtYXBhcnRtZW50LXRhdXJvbi1hcmVuYS1jcmFjb3dICVgDaLYBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAK4wNTOBsACAdICJGQ4OTE0OGYzLTVhMTQtNGRjNS1iMGU1LTAzOGFiMWU4NWZmM9gCAeACAQ&sid=b4ca43cfec7be560ba947fe0da43e943&dist=0&keep_landing=1&sb_price_type=total&type=total&activeTab=photosGallery';
+
+	const BOOKING_URL = (() => {
+		const today = new Date();
+		const fmt = (d: Date) => d.toISOString().slice(0, 10);
+		const checkin = fmt(today);
+		const checkout = fmt(new Date(today.getTime() + 2 * 86400000));
+		return `${BASE_BOOKING_URL}&checkin=${checkin}&checkout=${checkout}`;
+	})();
+
+	const AIRBNB_URL = (() => {
+		const today = new Date();
+		const fmt = (d: Date) => d.toISOString().slice(0, 10);
+		const checkin = fmt(today);
+		const checkout = fmt(new Date(today.getTime() + 2 * 86400000));
+		return `https://www.airbnb.pl/rooms/1649459036475846895?check_in=${checkin}&check_out=${checkout}`;
+	})();
 
 	const langs = ['en', 'no', 'pl'] as const;
 	const langMeta: Record<string, { label: string; flag: import('svelte').Component; name: string }> = {
@@ -23,9 +39,11 @@
 	};
 
 	const navLinks = $derived([
-		{ href: resolve(`/${data.lang}`), label: 'Home' },
-		{ href: resolve(`/${data.lang}/guide`), label: 'Krakow Guide' },
-		{ href: resolve(`/${data.lang}/guest-info`), label: 'Guest Info' }
+		{ href: resolve(`/${data.lang}/about`), label: 'About Us' },
+		{ href: resolve(`/${data.lang}/gallery`), label: 'Gallery' },
+		{ href: resolve(`/${data.lang}/facilities`), label: 'Facilities' },
+		{ href: resolve(`/${data.lang}/contact`), label: 'Contact' },
+		{ href: resolve(`/${data.lang}/guest-info`), label: 'House Rules' }
 	]);
 
 	// Sub-path after /{lang} — e.g. "guest-info" or "" for home
@@ -53,8 +71,9 @@
 	<div class="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
 		<!-- Left: Logo / Title -->
 		<a href={resolve(`/${data.lang}`)} class="shrink-0 no-underline">
-			<span class="text-lg font-bold tracking-tight text-gray-900 sm:text-xl">
-				{data.t.nav.title}
+			<span class="flex flex-col text-sm font-bold leading-tight tracking-tight text-gray-900 sm:text-base">
+				<span>Royal Blue Apartment</span>
+				<span>Tauron Arena Cracow</span>
 			</span>
 		</a>
 
@@ -130,15 +149,25 @@
 				{/if}
 			</div>
 
-			<!-- CTA Button — min-w prevents text-length changes from shifting adjacent elements -->
-			<a
-				href={BOOKING_URL}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="hidden min-w-[7rem] whitespace-nowrap rounded-lg bg-blue-600 px-3 py-2 text-center text-xs font-semibold text-white shadow transition hover:bg-blue-700 active:scale-95 sm:inline-block sm:min-w-[10rem] sm:px-4 sm:py-2.5 sm:text-sm"
-			>
-				{data.t.nav.book}
-			</a>
+			<!-- CTA Buttons -->
+			<div class="hidden items-center gap-2 sm:flex">
+				<a
+					href={BOOKING_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="whitespace-nowrap rounded-lg bg-blue-600 px-3 py-2 text-center text-xs font-semibold text-white shadow transition hover:bg-blue-700 active:scale-95 sm:px-4 sm:py-2.5 sm:text-sm"
+				>
+					{data.t.nav.book}
+				</a>
+				<a
+					href={AIRBNB_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="whitespace-nowrap rounded-lg bg-[#FF385C] px-3 py-2 text-center text-xs font-semibold text-white shadow transition hover:bg-[#E31C5F] active:scale-95 sm:px-4 sm:py-2.5 sm:text-sm"
+				>
+					Airbnb
+				</a>
+			</div>
 
 			<!-- Hamburger (mobile only) -->
 			<button
@@ -184,21 +213,36 @@
 	{/if}
 </header>
 
-<!-- Mobile FAB: Book button fixed to bottom-right, hidden on sm+ -->
-<a
-	href={BOOKING_URL}
-	target="_blank"
-	rel="noopener noreferrer"
-	aria-label={data.t.nav.book}
-	class="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-blue-700 active:scale-95 sm:hidden"
->
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4 shrink-0">
-		<path d="M10.75 16.82A7.462 7.462 0 0 1 10 17c-.34 0-.678-.023-1.01-.068a1 1 0 0 1-.004-1.989 5.5 5.5 0 1 0-4.311-5.57 1 1 0 0 1-1.998-.076A7.5 7.5 0 1 1 10.75 16.82Z" />
-		<path d="M10 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" />
-		<path d="M14.25 4.75a.75.75 0 0 0-1.5 0v1.5h-1.5a.75.75 0 0 0 0 1.5h1.5v1.5a.75.75 0 0 0 1.5 0v-1.5h1.5a.75.75 0 0 0 0-1.5h-1.5v-1.5Z" />
-	</svg>
-	Book
-</a>
+<!-- Mobile FABs: fixed bottom bar with Booking + Airbnb, hidden on sm+ -->
+<div class="fixed bottom-5 left-1/2 z-40 flex -translate-x-1/2 gap-3 sm:hidden">
+	<a
+		href={BOOKING_URL}
+		target="_blank"
+		rel="noopener noreferrer"
+		aria-label={data.t.nav.book}
+		class="flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-blue-700 active:scale-95"
+	>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4 shrink-0">
+			<path d="M10.75 16.82A7.462 7.462 0 0 1 10 17c-.34 0-.678-.023-1.01-.068a1 1 0 0 1-.004-1.989 5.5 5.5 0 1 0-4.311-5.57 1 1 0 0 1-1.998-.076A7.5 7.5 0 1 1 10.75 16.82Z" />
+			<path d="M10 13.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" />
+			<path d="M14.25 4.75a.75.75 0 0 0-1.5 0v1.5h-1.5a.75.75 0 0 0 0 1.5h1.5v1.5a.75.75 0 0 0 1.5 0v-1.5h1.5a.75.75 0 0 0 0-1.5h-1.5v-1.5Z" />
+		</svg>
+		Booking
+	</a>
+	<a
+		href={AIRBNB_URL}
+		target="_blank"
+		rel="noopener noreferrer"
+		aria-label="Book on Airbnb"
+		class="flex items-center gap-2 rounded-full bg-[#FF385C] px-5 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[#E31C5F] active:scale-95"
+	>
+		<!-- Airbnb Bélo icon (simplified) -->
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="size-4 shrink-0">
+			<path d="M16 1C10.925 1 6 6.925 6 13c0 3.313 1.363 6.288 3.5 8.5L16 31l6.5-9.5C24.637 19.288 26 16.313 26 13c0-6.075-4.925-12-10-12zm0 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+		</svg>
+		Airbnb
+	</a>
+</div>
 
 <main>
 	{@render children()}
