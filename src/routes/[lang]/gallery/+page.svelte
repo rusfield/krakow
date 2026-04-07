@@ -76,21 +76,31 @@
 			</h1>
 		</div>
 
-		<div class="flex flex-col gap-12">
+		<div class="flex flex-col gap-8">
 			{#each sections as section}
-				<div>
-					<h2 class="mb-4 text-xl font-semibold text-gray-800">{section.label}</h2>
-					<div class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+				<section
+					id={`gallery-${section.key}`}
+					class="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:p-6"
+				>
+					<div class="mb-5 flex items-center justify-between gap-3">
+						<h2 class="text-xl font-semibold text-gray-800">{section.label}</h2>
+						<span
+							class="inline-flex items-center justify-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-500"
+						>
+							{section.images.length}
+						</span>
+					</div>
+					<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
 						{#each section.images as img}
 							<button
 								type="button"
-								class="group overflow-hidden rounded-lg bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+								class="group overflow-hidden rounded-xl bg-gray-200 shadow-sm transition hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
 								onclick={() => openLightbox(asset(img))}
 							>
 								<img
 									src={asset(thumbFor(img))}
 									alt="{section.label} photo"
-									class="aspect-square w-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-90"
+									class="aspect-square w-full object-cover transition duration-300 group-hover:scale-[1.03] group-hover:brightness-95"
 									loading="lazy"
 									decoding="async"
 									sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
@@ -98,7 +108,7 @@
 							</button>
 						{/each}
 					</div>
-				</div>
+				</section>
 			{/each}
 		</div>
 	</div>

@@ -26,10 +26,9 @@
 <section class="bg-gray-50 py-16 sm:py-24">
 	<div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 		<div class="mb-12 text-center">
-			<h1 class="mb-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+			<h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 				{t.contact.pageTitle}
 			</h1>
-			<p class="text-base text-gray-500">{t.contact.intro}</p>
 		</div>
 
 		<div class="flex flex-col gap-6">
@@ -37,7 +36,7 @@
 				<div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 					<div class="min-w-0">
 						<h2 class="mb-3 flex items-center gap-2.5 text-lg font-semibold text-gray-900">
-							<Icon icon="lucide:phone-call" class="size-5 text-green-600" />
+							<Icon icon="lucide:phone-call" class="size-5 text-blue-700" />
 							{t.contact.phone}
 						</h2>
 						<p class="text-lg font-semibold text-gray-900">{CONTACT_PHONE_DISPLAY}</p>
@@ -62,7 +61,7 @@
 				<div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 					<div class="min-w-0">
 						<h2 class="mb-3 flex items-center gap-2.5 text-lg font-semibold text-gray-900">
-							<Icon icon="lucide:mail" class="size-5 text-blue-600" />
+							<Icon icon="lucide:mail" class="size-5 text-blue-700" />
 							{t.contact.email}
 						</h2>
 						<p class="text-lg font-semibold break-words text-gray-900">{CONTACT_EMAIL}</p>
@@ -81,7 +80,7 @@
 				<div class="flex flex-col gap-5 sm:flex-row sm:justify-between">
 					<div class="min-w-0">
 						<h2 class="mb-3 flex items-center gap-2.5 text-lg font-semibold text-gray-900">
-							<Icon icon="lucide:map-pinned" class="size-5 text-rose-500" />
+							<Icon icon="lucide:map-pinned" class="size-5 text-blue-700" />
 							{t.contact.address}
 						</h2>
 						<address class="not-italic">
