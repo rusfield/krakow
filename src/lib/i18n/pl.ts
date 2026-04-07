@@ -6,7 +6,7 @@ const pl: Dictionary = {
 		book: 'Booking.com',
 		airbnb: 'Airbnb',
 		links: {
-			about: 'O nas',
+			about: 'O apartamencie',
 			facilities: 'Wyposażenie',
 			guestInfo: 'Zasady pobytu',
 			gallery: 'Galeria',

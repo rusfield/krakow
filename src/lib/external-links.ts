@@ -2,7 +2,6 @@ import type { SupportedLang } from '$lib/i18n';
 
 const AIRBNB_LOCALE_BY_SITE_LANG = {
 	en: 'en',
-	no: 'no',
 	pl: 'pl'
 } as const satisfies Record<SupportedLang, string>;
 

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
-	import { resolve, base } from '$app/paths';
+	import { resolve, base, asset } from '$app/paths';
 	import { page } from '$app/state';
 	import { getAirbnbUrl, getBookingUrl } from '$lib/external-links';
+	import type { SupportedLang } from '$lib/i18n';
 	import type { LayoutData } from './$types';
 	import Gb from 'svelte-flag-icons/Gb.svelte';
-	import No from 'svelte-flag-icons/No.svelte';
 	import Pl from 'svelte-flag-icons/Pl.svelte';
 
 	let { data, children }: { data: LayoutData; children: import('svelte').Snippet } = $props();
@@ -25,13 +25,12 @@
 	const BOOKING_URL = $derived(getBookingUrl(data.lang));
 	const AIRBNB_URL = $derived(getAirbnbUrl(data.lang));
 
-	const langs = ['en', 'no', 'pl'] as const;
+	const langs = ['en', 'pl'] as const satisfies readonly SupportedLang[];
 	const langMeta: Record<
-		string,
+		SupportedLang,
 		{ label: string; flag: import('svelte').Component; name: string }
 	> = {
 		en: { label: 'EN', flag: Gb, name: 'English' },
-		no: { label: 'NO', flag: No, name: 'Norsk' },
 		pl: { label: 'PL', flag: Pl, name: 'Polski' }
 	};
 
@@ -290,6 +289,14 @@
 	</a>
 </div>
 
-<main>
+<main class="relative isolate">
+	<div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+		<div
+			class="absolute inset-0 bg-cover bg-top bg-no-repeat opacity-60"
+			style={`background-image: url('${asset('/images/bg.jpg')}');`}
+		></div>
+		<div class="absolute inset-0 bg-linear-to-b from-black/35 via-black/55 to-black/72"></div>
+	</div>
+
 	{@render children()}
 </main>

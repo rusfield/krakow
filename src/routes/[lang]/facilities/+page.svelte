@@ -5,10 +5,10 @@
 	const t = $derived(data.t);
 </script>
 
-<section class="bg-gray-50 py-16 sm:py-24">
+<section class="bg-transparent py-16 sm:py-24">
 	<div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 		<div class="mb-12 text-center">
-			<h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+			<h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
 				{t.facilities.pageTitle}
 			</h1>
 		</div>

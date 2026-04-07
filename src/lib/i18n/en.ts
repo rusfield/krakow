@@ -6,7 +6,7 @@ const en: Dictionary = {
 		book: 'Booking.com',
 		airbnb: 'Airbnb',
 		links: {
-			about: 'About Us',
+			about: 'About',
 			facilities: 'Facilities',
 			guestInfo: 'House Rules',
 			gallery: 'Gallery',

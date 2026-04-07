@@ -42,9 +42,9 @@
 
 <!-- Hero -->
 <section
-	class="relative flex min-h-[90vh] items-center justify-center bg-gray-800 bg-cover bg-center text-white"
+	class="relative flex min-h-[90vh] items-center justify-center bg-gray-800 bg-cover bg-top text-white"
 	style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('{asset(
-		'/images/27.jpg'
+		'/images/bg.jpg'
 	)}')"
 >
 	<div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
@@ -81,7 +81,7 @@
 </section>
 
 <!-- Welcome -->
-<section class="bg-white py-20 sm:py-28">
+<section class="bg-white/88 py-20 backdrop-blur-[2px] sm:py-28">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 		<div class="mx-auto mb-16 max-w-2xl text-center">
 			<h2 class="mb-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
